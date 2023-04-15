@@ -1,0 +1,24 @@
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.Domain/bin/Debug/net7.0/SmartAttendance.Domain.deps.json
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.Domain/bin/Debug/net7.0/SmartAttendance.Domain.dll
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.Domain/bin/Debug/net7.0/SmartAttendance.Domain.pdb
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.Domain/obj/Debug/net7.0/SmartAttendance.Domain.csproj.AssemblyReference.cache
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.Domain/obj/Debug/net7.0/SmartAttendance.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.Domain/obj/Debug/net7.0/SmartAttendance.Domain.AssemblyInfoInputs.cache
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.Domain/obj/Debug/net7.0/SmartAttendance.Domain.AssemblyInfo.cs
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.Domain/obj/Debug/net7.0/SmartAttendance.Domain.csproj.CoreCompileInputs.cache
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.Domain/obj/Debug/net7.0/SmartAttendance.Domain.dll
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.Domain/obj/Debug/net7.0/refint/SmartAttendance.Domain.dll
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.Domain/obj/Debug/net7.0/SmartAttendance.Domain.pdb
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.Domain/obj/Debug/net7.0/ref/SmartAttendance.Domain.dll
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.Domain\bin\Debug\net7.0\SmartAttendance.Domain.deps.json
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.Domain\bin\Debug\net7.0\SmartAttendance.Domain.dll
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.Domain\bin\Debug\net7.0\SmartAttendance.Domain.pdb
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.Domain\obj\Debug\net7.0\SmartAttendance.Domain.csproj.AssemblyReference.cache
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.Domain\obj\Debug\net7.0\SmartAttendance.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.Domain\obj\Debug\net7.0\SmartAttendance.Domain.AssemblyInfoInputs.cache
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.Domain\obj\Debug\net7.0\SmartAttendance.Domain.AssemblyInfo.cs
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.Domain\obj\Debug\net7.0\SmartAttendance.Domain.csproj.CoreCompileInputs.cache
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.Domain\obj\Debug\net7.0\SmartAttendance.Domain.dll
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.Domain\obj\Debug\net7.0\refint\SmartAttendance.Domain.dll
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.Domain\obj\Debug\net7.0\SmartAttendance.Domain.pdb
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.Domain\obj\Debug\net7.0\ref\SmartAttendance.Domain.dll

@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+/* ----------------------------------------SCROLLING-------------------------------- */
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: cursive, "Helvetica Neue", sans-serif;
+}
+
+/* ----------------------------------------SCROLLING-------------------------------- */
+.scroll-custom {
+  display: block;
+  margin: auto;
+  resize: none;
+  overflow-y: scroll;
+  outline: none;
+}
+
+.scroll-custom::-webkit-scrollbar {
+  width: 8px;
+  height: 90px;
+  background: #f1f1f1;
+}
+
+.scroll-custom::-webkit-scrollbar-thumb {
+  background-color: #a9a9a9;
+  border-radius: 50px !important;
+}
+
+/*--------------------------------------------------------------------*/
