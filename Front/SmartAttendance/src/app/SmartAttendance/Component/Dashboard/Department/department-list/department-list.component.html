@@ -1,0 +1,65 @@
+<div class="custom-container">
+    <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8"
+        *ngIf="dataSource && dataSource.data.length > 0">
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="Name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- sympol Column -->
+        <ng-container matColumnDef="sympol">
+            <th mat-header-cell *matHeaderCellDef> </th>
+            <td mat-cell *matCellDef="let element" style="text-align:end" (click)="$event.stopPropagation()">
+                <mat-icon style="color: red;cursor: pointer;" (click)="remove(element)">close</mat-icon>
+            </td>
+        </ng-container>
+
+        <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+        <ng-container matColumnDef="expandedDetail">
+            <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+                <div class="example-element-detail"
+                    [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                    <div class="example-element-description">
+                        <table class="table table-bordered" *ngIf="element.courses && element.courses.length > 0">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Avialable</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <ng-container *ngFor="let el of element.courses;  index as i">
+                                    <tr>
+                                        <td>{{i+1}}</td>
+                                        <td>{{el.name}}</td>
+                                        <td>{{el.avilable}}</td>
+                                    </tr>
+                                </ng-container>
+                            </tbody>
+                        </table>
+                        <div *ngIf="element.courses != undefined && element.courses.length <= 0"
+                            class="alert alert-light" role="alert">
+                            No Courses Assigned To this Department Yet
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let element; columns: displayedColumns;" class="example-element-row"
+            [class.example-expanded-row]="expandedElement === element"
+            (click)="expandedElement = expandedElement === element ? null : element">
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+
+    </table>
+
+    <div *ngIf="dataSource != undefined && dataSource.data.length <= 0" class="alert alert-light" role="alert">
+        No Departments Added Yet
+    </div>
+
+</div>

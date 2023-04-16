@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DepartmentDialogComponent } from '../department-dialog/department-dialog.component';
+import { DepartmentDialogComponent } from '../Department/department-dialog/department-dialog.component';
 
 @Component({
   selector: 'app-main-page',

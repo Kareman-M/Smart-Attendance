@@ -22,3 +22,5 @@ E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\obj\Debug\net
 E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\refint\SmartAttendance.DAL.dll
 E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\SmartAttendance.DAL.pdb
 E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\ref\SmartAttendance.DAL.dll
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\bin\Debug\net7.0\SmartAttendance.DAL.runtimeconfig.json
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\SmartAttendance.DAL.genruntimeconfig.cache

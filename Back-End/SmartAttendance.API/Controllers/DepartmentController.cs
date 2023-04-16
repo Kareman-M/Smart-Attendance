@@ -19,13 +19,13 @@ namespace SmartAttendance.API.Controllers
         }
 
         [HttpPost("Add")]
-        public IActionResult Add(string departmentName)
+        public IActionResult Add([FromQuery] string departmentName)
         {
             var dept = _departmentRepository.Add(new Department
             {
                 Name = departmentName,
             });
-            return Created("", dept);
+            return dept.IsCompleted ? Created("", dept) : Ok(dept);
         }
 
         [HttpDelete("Delete/{id}")]

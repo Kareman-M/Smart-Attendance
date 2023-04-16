@@ -101,8 +101,8 @@ namespace SmartAttendance.DAL.Migrations
                     b.Property<int>("InstructorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("TotalAttendanceGrade")
-                        .HasColumnType("int");
+                    b.Property<double>("TotalAttendanceGrade")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
@@ -121,8 +121,8 @@ namespace SmartAttendance.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AttendanceGrade")
-                        .HasColumnType("int");
+                    b.Property<double>("AttendanceGrade")
+                        .HasColumnType("float");
 
                     b.Property<string>("BarCode")
                         .IsRequired()

@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SmartAttendance.DAL.DBModels
 {
@@ -11,6 +12,7 @@ namespace SmartAttendance.DAL.DBModels
         public string BarCode { get; set; }
         public DateTime Date { get; set; }
         public int InstructorCourseId { get; set; }
+        [ForeignKey("InstructorCourseId")]
         public InstructorCourse InstructorCourse { get; set; }
     }
 }

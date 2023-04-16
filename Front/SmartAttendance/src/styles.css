@@ -8,7 +8,9 @@ body {
   margin: 0;
   font-family: cursive, "Helvetica Neue", sans-serif;
 }
-
+th {
+  color: gray !important;
+}
 /* ----------------------------------------SCROLLING-------------------------------- */
 .scroll-custom {
   display: block;

@@ -13,13 +13,18 @@ namespace SmartAttendance.DAL.Repository.Repository
 
         public Result Add(Department department)
         {
+
             if (department == null) return new Result(Result.NullValues);
+            var dept = _context.Department.FirstOrDefault(x => x.Name == department.Name);
+            if (dept != null) return new Result("This Department Is Already Exist");
             var entity = _context.Department.Add(department);
-            return _context.SaveChanges() > 0 ? new Result(Result.Saved, entity) : new Result(Result.SaveChangesError);
+
+            return _context.SaveChanges() > 0 ? new Result("Department Created Successfully", entity.Entity, true) : new Result(Result.SaveChangesError);
         }
 
         public Result Remove(int id)
         {
+            _context.Database.EnsureCreated();
             if (id == 0) return new Result(Result.ITemNotExist);
             var dept = _context.Department.FirstOrDefault(x => x.Id == id);
             if (dept == null) return new Result(Result.ITemNotExist);
@@ -29,6 +34,7 @@ namespace SmartAttendance.DAL.Repository.Repository
 
         public Result GetAll()
         {
+            _context.Database.EnsureCreated();
             return new Result("", _context.Department.Include(x => x.Courses));
         }
     }
