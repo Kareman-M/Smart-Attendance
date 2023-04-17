@@ -15,7 +15,25 @@ namespace SmartAttendance.API.Controllers
         [HttpGet("GetAll")]
         public IActionResult Get()
         {
-            return Ok(_departmentRepository.GetAll());
+            var data = _departmentRepository.GetAll();
+            data.Value = ((IEnumerable<Department>)data.Value).Select(x => new Department
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Courses = x.Courses.Select(x => new Course
+                {
+                    Avilable = x.Avilable,
+                    DepartmentId = x.DepartmentId,
+                    Id = x.Id,
+                    Name = x.Name,
+                    Department = new Department
+                    {
+                        Id = x.Id,
+                        Name = x.Name,
+                    }
+                }).ToList()
+            });
+            return Ok(data);
         }
 
         [HttpPost("Add")]

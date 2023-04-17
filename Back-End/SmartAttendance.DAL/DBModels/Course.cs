@@ -11,8 +11,8 @@ namespace SmartAttendance.DAL.DBModels
         public bool Avilable { get; set; }
         public int? DepartmentId { get; set; }
         [ForeignKey("DepartmentId")]
-        public Department Department { get; set; }
-        public ICollection<InstructorCourse>? InstructorCourses { get; set; }
+        public virtual Department Department { get; set; }
+        public virtual ICollection<InstructorCourse>? InstructorCourses { get; set; }
 
     }
 }

@@ -1,1 +1,29 @@
-<p>add-course works!</p>
+<span class="new-course">Add New course</span>
+<div class="custom-container">
+
+    <div class="row">
+        <div class="col-sm-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="CS" required #course>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Department</mat-label>
+                <mat-select required #dept placeholder="Select Department">
+                    <mat-option value="0"></mat-option>
+                    <mat-option *ngFor="let dept of departments" [value]="dept.id">{{dept.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-4 pt-2">
+
+            <button mat-mini-fab color="primary" (click)="addCourse(course.value, dept.value)" matTooltip="Submit"
+                [disabled]="dept.value == '0' || dept.value == undefined || course.value == '' || course.value == undefined">
+                <span style="font-size: 30px;line-height: 2;">+</span>
+            </button>
+        </div>
+    </div>
+
+</div>

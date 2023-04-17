@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DepartmentDialogComponent } from '../Department/department-dialog/department-dialog.component';
+import { CourseDialogComponent } from '../Course/course-dialog/course-dialog.component';
 
 @Component({
   selector: 'app-main-page',
@@ -13,6 +14,15 @@ export class MainPageComponent {
 
   openDepartmentsDialog() {
     this.matDialog.open(DepartmentDialogComponent, {
+      width: '70%',
+      position: {
+        top: '2%'
+      }
+    })
+  }
+
+  openCourseDialog() {
+    this.matDialog.open(CourseDialogComponent, {
       width: '70%',
       position: {
         top: '2%'

@@ -40,7 +40,7 @@
                                 </ng-container>
                             </tbody>
                         </table>
-                        <div *ngIf="element.courses != undefined && element.courses.length <= 0"
+                        <div *ngIf="element.courses == undefined || element.courses.length <= 0"
                             class="alert alert-light" role="alert">
                             No Courses Assigned To this Department Yet
                         </div>
@@ -58,7 +58,7 @@
 
     </table>
 
-    <div *ngIf="dataSource != undefined && dataSource.data.length <= 0" class="alert alert-light" role="alert">
+    <div *ngIf="dataSource.data == undefined || dataSource.data.length <= 0" class="alert alert-light" role="alert">
         No Departments Added Yet
     </div>
 

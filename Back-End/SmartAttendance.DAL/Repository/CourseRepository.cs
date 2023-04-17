@@ -13,19 +13,24 @@ namespace SmartAttendance.DAL.Repository
 
         public Result Add(Course course)
         {
-            if (course == null) return new Result(Result.NullValues); ;
+            if (course == null) return new Result(Result.NullValues);
+            var crs = _context.Course.FirstOrDefault(x => x.Name == course.Name && x.DepartmentId == course.DepartmentId);
+            if (crs != null) return new Result("This Course Is Already Exist");
             var entity = _context.Course.Add(course);
-            return _context.SaveChanges() > 0 ? new Result(Result.Saved, entity) : new Result(Result.SaveChangesError);
+
+            return _context.SaveChanges() > 0 ? new Result("Course Created Successfully", entity.Entity, true) : new Result(Result.SaveChangesError);
         }
 
         public Result GetAll()
         {
-            return new Result("", _context.Course.Include(x => x.Department));
+            return new Result("", _context.Course.Include(x => x.Department), true);
         }
 
         public Result GetAllWitInstructorCourses()
         {
-            return new Result("", _context.Course.Include(x => x.Department).Include(x => x.InstructorCourses.Distinct()).ThenInclude(x => x.Instructor));
+            return new Result("", _context.Course
+                .Include(x => x.Department)
+                .Include(x => x.InstructorCourses.Distinct()).ThenInclude(x => x.Instructor), true);
         }
 
         public Result Remove(int id)
@@ -34,7 +39,7 @@ namespace SmartAttendance.DAL.Repository
             var course = _context.Course.FirstOrDefault(x => x.Id == id);
             if (course == null) return new Result(Result.ITemNotExist);
             _context.Course.Remove(course);
-            return _context.SaveChanges() > 0 ? new Result(Result.Deleted) : new Result(Result.SaveChangesError);
+            return _context.SaveChanges() > 0 ? new Result(Result.Deleted, true) : new Result(Result.SaveChangesError);
         }
     }
 }

@@ -37,6 +37,7 @@ export class DepartmentListComponent {
 
   getData() {
     this.departmentService.getAll().subscribe(res => {
+      console.log(res)
       if (res && res.value.length > 0) {
         this.dataSource.data = res.value;
         return;

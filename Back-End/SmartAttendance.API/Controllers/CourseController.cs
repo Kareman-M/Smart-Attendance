@@ -15,7 +15,16 @@ namespace SmartAttendance.API.Controllers
         [HttpGet("GetAll")]
         public IActionResult Get()
         {
-            return Ok(_courseRepository.GetAll());
+            var data = _courseRepository.GetAll();
+            data.Value = ((IEnumerable<Course>)data.Value).Select(x => new CourseDTO
+            {
+                DepartmentId = x.DepartmentId,
+                DepartmentName = x.Department?.Name,
+                Avilable = x.Avilable,
+                Id = x.Id,
+                Name = x.Name,
+            });
+            return Ok(data);
         }
 
         [HttpPost("Add")]
@@ -27,6 +36,17 @@ namespace SmartAttendance.API.Controllers
                 DepartmentId = course.DepartmentId,
                 Avilable = true,
             });
+            if (!crs.IsCompleted) return Ok(crs);
+
+            var newCourse = (Course)crs.Value;
+            crs.Value = new CourseDTO
+            {
+                Avilable = newCourse.Avilable,
+                DepartmentId = newCourse.DepartmentId,
+                DepartmentName = newCourse.Department?.Name,
+                Id = newCourse.Id,
+                Name = newCourse.Name,
+            };
             return Created("", crs);
         }
 

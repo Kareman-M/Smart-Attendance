@@ -1,1 +1,8 @@
-<p>course-dialog works!</p>
+<h2 mat-dialog-title>Courses Management</h2>
+<mat-dialog-content class="mat-typography">
+    <app-add-course (updateCoursesList)="updateCoursesList($event)"></app-add-course>
+    <app-course-list [newCourse]="newCourse"></app-course-list>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

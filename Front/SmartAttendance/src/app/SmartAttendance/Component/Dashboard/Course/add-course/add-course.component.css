@@ -1,0 +1,19 @@
+.new-course {
+  position: relative;
+  top: 12px;
+  z-index: 10;
+  background: #fff;
+  width: 17%;
+  right: -37px;
+  height: 24px;
+}
+.custom-container {
+  border: 1px solid #ccc;
+  padding: 25px 0px 0px 33px;
+  box-shadow: 0px 0px 6px #ddd;
+  position: relative;
+}
+mat-form-field {
+  width: 100%;
+  margin-right: 30px;
+}

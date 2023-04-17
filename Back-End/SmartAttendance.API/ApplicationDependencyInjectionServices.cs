@@ -11,6 +11,7 @@ namespace SmartAttendance.API
        IConfiguration config)
         {
 
+
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();
             services.AddScoped<IInstructorRepository, InstructorRepository>();

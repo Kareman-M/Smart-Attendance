@@ -24,7 +24,6 @@ namespace SmartAttendance.DAL.Repository.Repository
 
         public Result Remove(int id)
         {
-            _context.Database.EnsureCreated();
             if (id == 0) return new Result(Result.ITemNotExist);
             var dept = _context.Department.FirstOrDefault(x => x.Id == id);
             if (dept == null) return new Result(Result.ITemNotExist);
@@ -34,7 +33,6 @@ namespace SmartAttendance.DAL.Repository.Repository
 
         public Result GetAll()
         {
-            _context.Database.EnsureCreated();
             return new Result("", _context.Department.Include(x => x.Courses));
         }
     }
