@@ -18,7 +18,7 @@ namespace SmartAttendance.API
             services.AddScoped<ILectureRepository, LectureRepository>();
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IInstructorRepository, InstructorRepository>();
-
+            services.AddScoped<IInstructorCourseRepository, InstructorCourseRepository>();
             return services;
         }
     }

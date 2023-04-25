@@ -23,6 +23,11 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatBadgeModule} from '@angular/material/badge';
+
 const materials = [
   MatSelectModule,
   MatProgressSpinnerModule,
@@ -48,6 +53,10 @@ const materials = [
   MatSlideToggleModule,
   MatTreeModule,
   MatExpansionModule,
+  MatCardModule,
+  MatDividerModule,
+  MatProgressBarModule,
+  MatBadgeModule,
 ];
 
 @NgModule({

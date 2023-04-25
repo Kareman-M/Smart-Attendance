@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +22,8 @@ import { AddDepartmentComponent } from './SmartAttendance/Component/Dashboard/De
 import { CourseListComponent } from './SmartAttendance/Component/Dashboard/Course/course-list/course-list.component';
 import { AddCourseComponent } from './SmartAttendance/Component/Dashboard/Course/add-course/add-course.component';
 import { CourseDialogComponent } from './SmartAttendance/Component/Dashboard/Course/course-dialog/course-dialog.component';
+import { CalenderComponent } from './SmartAttendance/Component/InstructorCourses/calender/calender.component';
+import { AddNewCourseComponent } from './SmartAttendance/Component/InstructorCourses/add-new-course/add-new-course.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +38,9 @@ import { CourseDialogComponent } from './SmartAttendance/Component/Dashboard/Cou
     AddDepartmentComponent,
     CourseListComponent,
     AddCourseComponent,
-    CourseDialogComponent
+    CourseDialogComponent,
+    CalenderComponent,
+    AddNewCourseComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +48,14 @@ import { CourseDialogComponent } from './SmartAttendance/Component/Dashboard/Cou
     BrowserAnimationsModule,
     AngularMaterialModule,
     HttpClientModule,
-
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModalModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
