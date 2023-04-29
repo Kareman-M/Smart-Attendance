@@ -19,4 +19,8 @@ export class InstructorCourseService {
   getAll(instructorId:number):Observable<Result>{
     return this.baseService.get(`${environment.BASE_URL}/api/InstructorCourse/GetAll/${instructorId}`)
   }
+
+  delete(instructorId:number):Observable<Result>{
+    return this.baseService.delete(`${environment.BASE_URL}/api/InstructorCourse/Delete/${instructorId}`)
+  }
 }

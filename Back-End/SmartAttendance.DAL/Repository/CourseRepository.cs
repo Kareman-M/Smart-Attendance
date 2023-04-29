@@ -39,7 +39,7 @@ namespace SmartAttendance.DAL.Repository
             var course = _context.Course.FirstOrDefault(x => x.Id == id);
             if (course == null) return new Result(Result.ITemNotExist);
             _context.Course.Remove(course);
-            return _context.SaveChanges() > 0 ? new Result(Result.Deleted, true) : new Result(Result.SaveChangesError);
+            return _context.SaveChanges() > 0 ? new Result(Result.Deleted,null, true) : new Result(Result.SaveChangesError);
         }
     }
 }

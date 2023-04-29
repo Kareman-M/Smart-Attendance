@@ -1,4 +1,4 @@
-import { Lucture } from "./lucture";
+import { Lucture } from "./lecture";
 
 export class InstructorCourse {
     public  id :number = 0;

@@ -6,6 +6,8 @@ import {CalendarEvent,CalendarEventAction,CalendarEventTimesChangedEvent,Calenda
 import { EventColor } from 'calendar-utils';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BaseService } from 'src/app/SmartAttendance/Service/base.service';
+import { LectureService } from 'src/app/SmartAttendance/Service/lecture.service';
+import { AddLucture } from 'src/app/SmartAttendance/Model/add-lucture';
 
 const colors: Record<string, EventColor> = {
   red: {
@@ -26,18 +28,6 @@ const colors: Record<string, EventColor> = {
   selector: 'app-calender',
   templateUrl: './calender.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  styles: [
-    `
-      h3 {
-        margin: 0 0 10px;
-      }
-
-      pre {
-        background-color: #f5f5f5;
-        padding: 15px;
-      }
-    `,
-  ],
   styleUrls: ['./calender.component.css']
 })
 export class CalenderComponent {
@@ -49,75 +39,37 @@ export class CalenderComponent {
 
   viewDate: Date = new Date();
 
-  modalData!: {
-    action: string;
-    event: CalendarEvent;
-  };
-
-  actions: CalendarEventAction[] = [
-    {
-      label: '<i class="fas fa-fw fa-pencil-alt"></i>',
-      a11yLabel: 'Edit',
-      onClick: ({ event }: { event: CalendarEvent }): void => {
-        this.handleEvent('Edited', event);
-      },
-    },
-    {
-      label: '<i class="fas fa-fw fa-trash-alt"></i>',
-      a11yLabel: 'Delete',
-      onClick: ({ event }: { event: CalendarEvent }): void => {
-        this.events = this.events.filter((iEvent) => iEvent !== event);
-        this.handleEvent('Deleted', event);
-      },
-    },
-  ];
-
   refresh = new Subject<void>();
 
-  events: CalendarEvent[] = [
-    {
-      start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 1),
-      title: 'A 3 day event',
-      color: { ...colors['red'] },
-      actions: this.actions,
-      allDay: true,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true,
-      },
-      draggable: true,
-    },
-    {
-      start: startOfDay(new Date()),
-      title: 'An event with no end date',
-      color: { ...colors['yellow'] },
-      actions: this.actions,
-    },
-    {
-      start: subDays(endOfMonth(new Date()), 3),
-      end: addDays(endOfMonth(new Date()), 3),
-      title: 'A long event that spans 2 months',
-      color: { ...colors['blue'] },
-      allDay: true,
-    },
-    {
-      start: addHours(startOfDay(new Date()), 2),
-      end: addHours(new Date(), 2),
-      title: 'A draggable and resizable event',
-      color: { ...colors['yellow'] },
-      actions: this.actions,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true,
-      },
-      draggable: true,
-    },
-  ];
+  events: CalendarEvent[] = [ ];
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal) { }
+  constructor(private modal: NgbModal, private lectureService:LectureService) { }
+  
+  ngOnInit(){
+    this.getAllLectures()
+  }
+
+  getAllLectures(){
+    this.lectureService.getAllInstructorLectures(1).subscribe(res=> {
+      console.log(res)
+      var _events:any[] = [];
+       res.forEach((element:AddLucture) => {
+        _events.push(
+          {
+            start: new Date(element.date),
+            end: new Date(element.date),
+            title: element.title,
+            color: { ...colors['blue'] },
+          }
+        )
+      });
+      
+      this.events = _events;
+      console.log(this.events)
+    })
+  }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -152,8 +104,9 @@ export class CalenderComponent {
   }
 
   handleEvent(action: string, event: CalendarEvent): void {
-    this.modalData = { event, action };
-    this.modal.open(this.modalContent, { size: 'lg' });
+    // this.modalData = { event, action };
+    // this.modal.open(this.modalContent, { size: 'lg' });
+    console.log(event)
   }
 
   deleteEvent(eventToDelete: CalendarEvent) {
