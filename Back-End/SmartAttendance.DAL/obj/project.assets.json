@@ -3464,19 +3464,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kariman.m\\.nuget\\packages\\": {}
+    "C:\\Users\\Kareman\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\KM\\RoadMap\\Collage\\SmartAttendance\\Back-End\\SmartAttendance.DAL\\SmartAttendance.DAL.csproj",
+      "projectUniqueName": "D:\\Collage\\Smart-Attendance\\Back-End\\SmartAttendance.DAL\\SmartAttendance.DAL.csproj",
       "projectName": "SmartAttendance.DAL",
-      "projectPath": "E:\\KM\\RoadMap\\Collage\\SmartAttendance\\Back-End\\SmartAttendance.DAL\\SmartAttendance.DAL.csproj",
-      "packagesPath": "C:\\Users\\kariman.m\\.nuget\\packages\\",
-      "outputPath": "E:\\KM\\RoadMap\\Collage\\SmartAttendance\\Back-End\\SmartAttendance.DAL\\obj\\",
+      "projectPath": "D:\\Collage\\Smart-Attendance\\Back-End\\SmartAttendance.DAL\\SmartAttendance.DAL.csproj",
+      "packagesPath": "C:\\Users\\Kareman\\.nuget\\packages\\",
+      "outputPath": "D:\\Collage\\Smart-Attendance\\Back-End\\SmartAttendance.DAL\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\kariman.m\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Kareman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3484,6 +3489,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3543,7 +3549,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -6,6 +6,6 @@ namespace SmartAttendance.API.Models
         public int InstructorId { get; set; }
         public int TotalAttendanceGrade { get; set; }
         public int CourseId { get; set; }
-        public List<Lucture>? Lectures { get; set; }
+        public string Term { get; set; }
     }
 }

@@ -1,1 +1,38 @@
-<p>instructor-courses works!</p>
+<!-- <app-calender></app-calender> -->
+<app-add-new-course (updateData)="getAll()"></app-add-new-course>
+
+<div style="border: 1px solid #ccc;margin-top: 60px;"></div>
+<span style="background: #fff;padding: 0px 5px;position: relative;top: -12px;left: 36px;color: gray;">Your Courses</span>
+
+<div class="row" style="padding: 25px;">
+    <div class="col-sm-3 mt-4" *ngFor="let item of instructorCourse">
+
+        <mat-card class="example-card">
+            <mat-card-header style="width: 100%; display: block;">
+                <mat-card-subtitle style="width: 100%; display: block;">
+                   <span style="display: inline-block;width: 50%;text-align: start;">{{item.data.departmentName}}</span>  
+                   <span style="display: inline-block;width: 50%;text-align: end;">{{item.data.term}} Term</span></mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content>
+                <!-- [ngClass]="generateRandomColor()" -->
+                <div class="cardContent"  class="{{item.color}}">
+                    {{item.data.courseName}}
+                </div>
+
+                <span style="padding-bottom: 5px; display: block; text-align: center; margin: 0;color: gray;">Attendance Grades: {{item.data.totalAttendanceGrade}}</span >
+                <mat-divider></mat-divider>
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button mat-button style="color: gray;" (click)="openLecturesDialog(item.data)">Lectures</button>
+                <button mat-button style="color: gray;" (click)="delete(item.data)">Delete</button>
+                <button mat-button style="color: gray;">Attendance</button>
+            </mat-card-actions>
+
+
+
+        </mat-card>
+
+    </div>
+</div>

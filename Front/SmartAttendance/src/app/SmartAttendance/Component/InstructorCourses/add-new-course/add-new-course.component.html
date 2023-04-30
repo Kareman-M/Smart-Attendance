@@ -1,0 +1,122 @@
+<div class="my-2">
+    <mat-accordion>
+
+        <mat-expansion-panel (opened)="true" (closed)="false">
+
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Add New Course
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+
+
+            <form [formGroup]="formGroup">
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Department</mat-label>
+                            <mat-select #dept formControlName="DepartmentId">
+                                <mat-option *ngFor="let department of departments"
+                                    [value]="department.id">{{department.name}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Course</mat-label>
+                            <mat-select [disabled]="dept.value == '' || dept.value == undefined " #crs
+                                formControlName="CourseId">
+                                <ng-container *ngFor="let course of courses">
+                                    <mat-option *ngIf="course.departmentId == dept.value"
+                                        [value]="course.id">{{course.name}}</mat-option>
+                                </ng-container>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <mat-form-field appearance="fill">
+                            <mat-label> Grades</mat-label>
+                            <input matInput formControlName="TotalAttendanceGrade" type="number" [min]="0" #grade>
+                            <mat-error *ngIf="grade.value < '0' &&  grade.value  != ''"> Attendance Grade Can't be Less
+                                Than 0 </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Term</mat-label>
+                            <mat-select [disabled]="crs.value == '' || crs.value == undefined "
+                                formControlName="Term">
+                                    <mat-option value="First">First</mat-option>
+                                    <mat-option value="Second">Second</mat-option>
+                                    <mat-option value="Summer">Summer</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-sm-2 btns">
+                        <button (click)="submit()" mat-raised-button color="primary"
+                            [disabled]="formGroup.invalid">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </mat-expansion-panel>
+
+    </mat-accordion>
+</div>
+
+
+<!-- <span *ngIf="formGroup.valid">
+    <button (click)="addlecturesOn= true" *ngIf="!addlecturesOn" mat-raised-button>Add
+        Lectures</button>
+    <button (click)="addlecturesOn= false" *ngIf="addlecturesOn"
+        mat-raised-button>Discard</button>
+</span>
+
+<div *ngIf="addlecturesOn">
+
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width: 60%;">
+                <mat-form-field>
+                    <mat-label>Title</mat-label>
+                    <input matInput type="text" #title>
+                </mat-form-field>
+            </th>
+            <th style="width: 20%;"> 
+                <mat-form-field >
+                    <mat-label>Date</mat-label>
+                    <input matInput [matDatepicker]="data" #lecDate>
+                    <mat-datepicker-toggle matIconSuffix [for]="data"></mat-datepicker-toggle>
+                    <mat-datepicker #data></mat-datepicker>
+                </mat-form-field>
+            </th>
+            <th style="width: 10%;">
+                <mat-form-field>
+                    <mat-label>Grade</mat-label>
+                    <input matInput type="number" #grade>
+                </mat-form-field>
+            </th>
+            <th style="vertical-align: middle;padding-bottom: 34px;width: 5%;">
+                <button mat-mini-fab [disabled]="lecDate.value == '' || title.value == ''" (click)="addlecture(title.value,lecDate.value,grade.value)">
+                    <mat-icon>done</mat-icon>
+                </button>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let lecture of addedLectures">
+            <td>{{lecture.title}}</td>
+            <td>{{lecture.attendanceGrade}}</td>
+            <td>{{lecture.date}}</td>
+        </tr>
+    </tbody>
+</table>
+
+</div> -->

@@ -1,0 +1,71 @@
+<h2 mat-dialog-title>Manage Lectures For <strong>{{item.courseName}}</strong></h2>
+<mat-dialog-content class="mat-typography">
+<form [formGroup]="formGroup">
+
+    <div class="row ">
+        <div class="col-sm-5">
+            <mat-form-field>
+                <mat-label>Title</mat-label>
+                <input matInput type="text" formControlName="title">
+            </mat-form-field>
+            
+        </div>
+        <div class="col-sm-3">
+            <mat-form-field>
+                <mat-label>Date</mat-label>
+                <input matInput [matDatepicker]="data"   formControlName="date">
+                <mat-datepicker-toggle matIconSuffix [for]="data"></mat-datepicker-toggle>
+                <mat-datepicker #data></mat-datepicker>
+            </mat-form-field>
+            
+        </div>
+        <div class="col-sm-3">
+            <mat-form-field>
+                <mat-label>Grade</mat-label>
+                <input matInput type="number"  formControlName="grade" (change)="canAddTheGrade()">
+            </mat-form-field>
+        </div>
+        <div class="col-sm-1 text-end">
+            <button mat-mini-fab [disabled]="formGroup.invalid"
+            (click)="addlecture()">
+            <mat-icon>done</mat-icon>
+        </button>
+    </div>
+    
+    
+</div>
+</form>
+
+
+    <div class="custom-container mt-4">
+        <table class="table " *ngIf="allLectures.length > 0">
+            <thead>
+                <tr>
+                    <th> Title </th>
+                    <th> Date </th>
+                    <th> Grade</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let lecture of allLectures">
+                    <td>{{lecture.title}}</td>
+                    <td>{{lecture.date | date:'yyyy - MM - dd'}}</td>
+                    <td>{{lecture.attendanceGrade}}</td>
+                    <td>
+                        <mat-icon style="cursor: pointer; color: red;" (click)="deleteLecture(lecture)">delete</mat-icon>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div *ngIf="allLectures.length <= 0" class="alert alert-light" role="alert">
+            No Lectures Added Yet
+        </div>
+    </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

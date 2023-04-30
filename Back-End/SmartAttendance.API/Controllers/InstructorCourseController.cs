@@ -16,7 +16,21 @@ namespace SmartAttendance.API.Controllers
         [HttpGet("GetAll/{instructorId}")]
         public IActionResult Get(int instructorId)
         {
-            return Ok(_instructorCourseRepository.GetAll(instructorId));
+            var res = _instructorCourseRepository.GetAll(instructorId);
+            res.Value = ((IEnumerable<InstructorCourse>)res.Value).Select(x => new InstructorCourseDTO
+            {
+                CourseId = x.CourseId,
+                CourseName = x.Course.Name,
+                DepartmentId = x.Course.DepartmentId ?? 0,
+                DepartmentName = x.Course.Department.Name,
+                CreatedAt = x.CreatedAt,
+                Id = x.Id,
+                InstructorId = x.InstructorId,
+                Term = x.Term,
+                TotalAttendanceGrade = x.TotalAttendanceGrade,
+                Lectures = x.Lectures
+            });
+            return Ok(res);
         }
 
         [HttpPost("Add")]
@@ -27,15 +41,10 @@ namespace SmartAttendance.API.Controllers
                 InstructorId = insCrs.InstructorId,
                 CourseId = insCrs.CourseId,
                 TotalAttendanceGrade = insCrs.TotalAttendanceGrade,
-                Lectures = insCrs?.Lectures?.Select(x => new DAL.DBModels.Lucture
-                {
-                    AttendanceGrade = x.AttendanceGrade ?? (insCrs.TotalAttendanceGrade / insCrs?.Lectures?.Count) ?? 0,
-                    BarCode = x.BarCode,
-                    Date = x.Date,
-                    Title = x.Title,
-                })?.ToList(),
+                CreatedAt = DateTime.Now,
+                Term = insCrs.Term
             });
-            return Created("", crs);
+            return Ok(crs);
         }
 
         [HttpDelete("Delete/{id}")]

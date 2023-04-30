@@ -13,13 +13,17 @@ namespace SmartAttendance.DAL.Repository
         public Result Add(InstructorCourse instructorCourse)
         {
             if (instructorCourse == null) return new Result(Result.NullValues);
+            var insCrs = _context.InstructorCourse
+                .Where(x => x.CourseId == instructorCourse.CourseId && x.Term.ToLower() == instructorCourse.Term.ToLower() && x.CreatedAt.Year == instructorCourse.CreatedAt.Year);
+            if (insCrs.Any()) return new Result("This Course Is Already Taken");
             var entity = _context.InstructorCourse.Add(instructorCourse);
-            return _context.SaveChanges() > 0 ? new Result(Result.Saved, entity) : new Result(Result.SaveChangesError);
+            return _context.SaveChanges() > 0 ? new Result("Created Successfully", entity.Entity,true) : new Result(Result.SaveChangesError);
+
         }
 
         public Result GetAll(int instructorId)
         {
-            return new Result("", _context.InstructorCourse.Include(x => x.Course).Include(x => x.Instructor));
+            return new Result("", _context.InstructorCourse.Include(x => x.Course).ThenInclude(x=> x.Department).Include(x => x.Instructor));
         }
 
         public Result Remove(int id)
