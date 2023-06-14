@@ -25,6 +25,7 @@ import { CourseDialogComponent } from './SmartAttendance/Component/Dashboard/Cou
 import { CalenderComponent } from './SmartAttendance/Component/InstructorCourses/calender/calender.component';
 import { AddNewCourseComponent } from './SmartAttendance/Component/InstructorCourses/add-new-course/add-new-course.component';
 import { LecturesDialogComponent } from './SmartAttendance/Component/Lectures/lectures-dialog/lectures-dialog.component';
+import { LoginComponent } from './Layout/login/login/login.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { LecturesDialogComponent } from './SmartAttendance/Component/Lectures/le
     CourseDialogComponent,
     CalenderComponent,
     AddNewCourseComponent,
-    LecturesDialogComponent
+    LecturesDialogComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,40 @@
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.DAL/obj/Debug/net7.0/SmartAttendance.DAL.csproj.AssemblyReference.cache
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.DAL/obj/Debug/net7.0/SmartAttendance.DAL.GeneratedMSBuildEditorConfig.editorconfig
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.DAL/obj/Debug/net7.0/SmartAttendance.DAL.AssemblyInfoInputs.cache
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.DAL/obj/Debug/net7.0/SmartAttendance.DAL.AssemblyInfo.cs
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.DAL/obj/Debug/net7.0/SmartAttendance.DAL.csproj.CoreCompileInputs.cache
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.DAL/bin/Debug/net7.0/SmartAttendance.DAL.deps.json
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.DAL/bin/Debug/net7.0/SmartAttendance.DAL.dll
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.DAL/bin/Debug/net7.0/SmartAttendance.DAL.pdb
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.DAL/obj/Debug/net7.0/SmartAttendance.DAL.dll
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.DAL/obj/Debug/net7.0/refint/SmartAttendance.DAL.dll
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.DAL/obj/Debug/net7.0/SmartAttendance.DAL.pdb
+/home/btech/Me/Graduate Project/Back-End/SmartAttendance.DAL/obj/Debug/net7.0/ref/SmartAttendance.DAL.dll
+D:\Collage\Smart-Attendance\Back-End\SmartAttendance.DAL\bin\Debug\net7.0\SmartAttendance.DAL.deps.json
+D:\Collage\Smart-Attendance\Back-End\SmartAttendance.DAL\bin\Debug\net7.0\SmartAttendance.DAL.runtimeconfig.json
+D:\Collage\Smart-Attendance\Back-End\SmartAttendance.DAL\bin\Debug\net7.0\SmartAttendance.DAL.dll
+D:\Collage\Smart-Attendance\Back-End\SmartAttendance.DAL\bin\Debug\net7.0\SmartAttendance.DAL.pdb
+D:\Collage\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\SmartAttendance.DAL.csproj.AssemblyReference.cache
+D:\Collage\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\SmartAttendance.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Collage\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\SmartAttendance.DAL.AssemblyInfoInputs.cache
+D:\Collage\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\SmartAttendance.DAL.AssemblyInfo.cs
+D:\Collage\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\SmartAttendance.DAL.csproj.CoreCompileInputs.cache
+D:\Collage\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\SmartAttendance.DAL.dll
+D:\Collage\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\refint\SmartAttendance.DAL.dll
+D:\Collage\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\SmartAttendance.DAL.pdb
+D:\Collage\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\SmartAttendance.DAL.genruntimeconfig.cache
+D:\Collage\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\ref\SmartAttendance.DAL.dll
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\bin\Debug\net7.0\SmartAttendance.DAL.deps.json
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\bin\Debug\net7.0\SmartAttendance.DAL.runtimeconfig.json
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\bin\Debug\net7.0\SmartAttendance.DAL.dll
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\bin\Debug\net7.0\SmartAttendance.DAL.pdb
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\SmartAttendance.DAL.csproj.AssemblyReference.cache
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\SmartAttendance.DAL.GeneratedMSBuildEditorConfig.editorconfig
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\SmartAttendance.DAL.AssemblyInfoInputs.cache
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\SmartAttendance.DAL.AssemblyInfo.cs
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\SmartAttendance.DAL.csproj.CoreCompileInputs.cache
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\SmartAttendance.DAL.dll
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\refint\SmartAttendance.DAL.dll
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\SmartAttendance.DAL.pdb
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\SmartAttendance.DAL.genruntimeconfig.cache
+E:\KM\RoadMap\Collage\SmartAttendance\Back-End\SmartAttendance.DAL\obj\Debug\net7.0\ref\SmartAttendance.DAL.dll
