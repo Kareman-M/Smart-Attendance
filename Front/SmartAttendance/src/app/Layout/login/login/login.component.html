@@ -1,0 +1,24 @@
+<div class="header">
+    <span>SMART ATTENDANCE</span>
+    <div class="image">
+        <img src="../../../../assets/img/qr-code8.png">
+    </div>
+</div>
+<div class="custom-container">
+    <div class="login">
+        <form [formGroup]="loginForm">
+            <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input type="text" matInput formControlName="username">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input type="password" matInput formControlName="password">
+            </mat-form-field>
+
+            <div class="text-center">
+                <button class="w-25" mat-raised-button (click)="login()">Login</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -11,6 +11,7 @@ namespace SmartAttendance.DAL.Context
         }
 
         public DbSet<Course> Course { get; set; }
+        public DbSet<User> User { get; set; }
         public DbSet<Department> Department { get; set; }
         public DbSet<Instructor> Instructor { get; set; }
         public DbSet<Student> Student { get; set; }

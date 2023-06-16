@@ -1,11 +1,3 @@
 ﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
-
-/Back-End/.vs/SmartAttendance/DesignTimeBuild/.dtbcache.v2
-/Back-End/.vs/SmartAttendance/v17/.suo
-/Back-End/SmartAttendance.API/bin/Debug/net7.0/appsettings.json
-/Back-End/SmartAttendance.API/obj/Debug/net7.0/ref/SmartAttendance.API.dll
-/Back-End/SmartAttendance.API/obj/Debug/net7.0/SmartAttendance.API.csproj.AssemblyReference.cache
-/Back-End/SmartAttendance.API/obj/project.nuget.cache
-/Back-End/SmartAttendance.API/obj/SmartAttendance.API.csproj.nuget.dgspec.json

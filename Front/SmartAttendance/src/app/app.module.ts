@@ -25,6 +25,7 @@ import { CourseDialogComponent } from './SmartAttendance/Component/Dashboard/Cou
 import { CalenderComponent } from './SmartAttendance/Component/InstructorCourses/Calender_/calender/calender.component';
 import { AddNewCourseComponent } from './SmartAttendance/Component/InstructorCourses/add-new-course/add-new-course.component';
 import { LecturesDialogComponent } from './SmartAttendance/Component/Lectures/lectures-dialog/lectures-dialog.component';
+import { LoginComponent } from './Layout/login/login/login.component';
 import { DisplayLectureBarCodeComponent } from './SmartAttendance/Component/InstructorCourses/display-lecture-bar-code/display-lecture-bar-code.component';
 import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 import { DeleteCoursDialogComponent } from './SmartAttendance/Component/InstructorCourses/delete-cours-dialog/delete-cours-dialog.component';
@@ -50,6 +51,8 @@ import { UserListComponent } from './SmartAttendance/Component/Dashboard/User/us
     CourseDialogComponent,
     CalenderComponent,
     AddNewCourseComponent,
+    LecturesDialogComponent,
+    LoginComponent
     LecturesDialogComponent,
     DisplayLectureBarCodeComponent,
     DeleteCoursDialogComponent,
