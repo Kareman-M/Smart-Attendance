@@ -1,3 +1,17 @@
 ﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
+/Back-End/.vs/SmartAttendance/FileContentIndex/36b633e8-4c18-4c46-a288-84d288b41d4a.vsidx
+/Back-End/.vs/SmartAttendance/FileContentIndex/573b1dbb-b64d-4fc4-bb13-6e640b73fda0.vsidx
+/Back-End/.vs/SmartAttendance/FileContentIndex/69110001-e5ee-4aa0-8a66-ade93cbbb41c.vsidx
+/Back-End/.vs/SmartAttendance/FileContentIndex/b1ef68f7-134c-45bc-b3f8-2bc6ccf3698c.vsidx
+/Back-End/.vs/SmartAttendance/FileContentIndex/a2b21160-df6c-4b7b-98bf-598a323bc0d0.vsidx
+/Back-End/.vs/SmartAttendance/FileContentIndex/d72a523b-7f7c-4c26-ae6c-6b942d62659a.vsidx
+/Back-End/SmartAttendance.API/obj/Debug/net7.0/SmartAttendance.API.csproj.AssemblyReference.cache
+/Back-End/SmartAttendance.API/obj/project.nuget.cache
+/Back-End/SmartAttendance.API/obj/SmartAttendance.API.csproj.nuget.dgspec.json
+/Back-End/SmartAttendance.API/obj/SmartAttendance.API.csproj.nuget.g.props
+/Back-End/SmartAttendance.DAL/obj/Debug/net7.0/SmartAttendance.DAL.GeneratedMSBuildEditorConfig.editorconfig
+/Back-End/SmartAttendance.DAL/obj/Debug/net7.0/SmartAttendance.DAL.csproj.AssemblyReference.cache
+/Back-End/SmartAttendance.DAL/obj/SmartAttendance.DAL.csproj.nuget.g.props
+/Back-End/.vs/SmartAttendance/v17/.suo
