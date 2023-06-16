@@ -10,6 +10,7 @@ namespace SmartAttendance.DAL.DBModels
         public string Name { get; set; }
         public bool Avilable { get; set; }
         public int? DepartmentId { get; set; }
+        public DateTime CreatedAt { get; set; }
         [ForeignKey("DepartmentId")]
         public virtual Department Department { get; set; }
         public virtual ICollection<InstructorCourse>? InstructorCourses { get; set; }

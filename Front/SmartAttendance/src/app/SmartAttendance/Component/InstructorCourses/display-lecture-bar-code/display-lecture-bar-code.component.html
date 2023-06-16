@@ -1,0 +1,43 @@
+<div class="custom-container">
+
+    <div class="lectures-container">
+        <div class="alert alert-info" role="alert" *ngIf="luctures.length <= 0 || luctures == undefined">
+            No Lectures Registered For Today!
+        </div>
+
+        <div class="Lectures" *ngIf="!(luctures.length <= 0 || luctures == undefined)">
+            <div class="row" >
+                <div class="col-sm-3" *ngFor="let lecture of luctures">
+                    <div class="lecture" (click)="selectLecture(lecture)" [ngClass]="{'selected':lecture == selectedLucture }">
+                            <div style="width:50%">
+                                <h4 class="mb-0">{{lecture.courseName}}</h4>
+                                <h5 class="mb-0" style="overflow:hidden;" matTooltip="{{lecture.title}}">{{lecture.title}}</h5>
+                            </div>
+                            <ngx-qrcode [elementType]="elementType" [errorCorrectionLevel]=" correctionLevel"
+                                [value]="lecture.barCode" cssClass="rq-code"></ngx-qrcode>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="barcode-container" *ngIf="selectedLucture != undefined" >
+        <div class="icon">
+                <mat-icon (click)="fullscreen()" #icon>unfold_more</mat-icon>
+            <!-- <mat-icon (click)="openFullscreen()" class="fullicon">unfold_less</mat-icon> -->
+        </div>
+        <div class="barcode">
+            <span class="mb-0 fw-bold">Scan Me</span>
+            <ngx-qrcode [elementType]="elementType" [errorCorrectionLevel]=" correctionLevel" *ngIf="selectedLucture.barCode != undefined"
+            [value]="selectedLucture.barCode" cssClass="big-qrcode"></ngx-qrcode>
+        </div>
+    </div>
+</div>
+
+
+<!-- <ng-template #template>
+    <mat-icon (click)="openFullscreen()">unfold_less</mat-icon>
+    <ngx-qrcode [elementType]="elementType" [errorCorrectionLevel]=" correctionLevel"
+            [value]="selectedLucture.barCode" cssClass="big-qrcode"></ngx-qrcode>
+</ng-template> -->

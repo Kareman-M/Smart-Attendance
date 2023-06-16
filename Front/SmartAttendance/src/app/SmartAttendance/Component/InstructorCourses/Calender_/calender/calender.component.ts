@@ -8,6 +8,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BaseService } from 'src/app/SmartAttendance/Service/base.service';
 import { LectureService } from 'src/app/SmartAttendance/Service/lecture.service';
 import { AddLucture } from 'src/app/SmartAttendance/Model/add-lucture';
+import { MatDialog } from '@angular/material/dialog';
+import { CalenderEventComponent } from '../calender-event/calender-event.component';
 
 const colors: Record<string, EventColor> = {
   red: {
@@ -45,15 +47,16 @@ export class CalenderComponent {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal, private lectureService:LectureService) { }
+  constructor(private matDialod: MatDialog, private lectureService:LectureService) { }
   
   ngOnInit(){
-    this.getAllLectures()
+    setTimeout(()=>{
+      this.getAllLectures()
+    },1000)
   }
 
   getAllLectures(){
     this.lectureService.getAllInstructorLectures(1).subscribe(res=> {
-      console.log(res)
       var _events:any[] = [];
        res.forEach((element:AddLucture) => {
         _events.push(
@@ -65,9 +68,7 @@ export class CalenderComponent {
           }
         )
       });
-      
       this.events = _events;
-      console.log(this.events)
     })
   }
 
@@ -104,9 +105,13 @@ export class CalenderComponent {
   }
 
   handleEvent(action: string, event: CalendarEvent): void {
-    // this.modalData = { event, action };
-    // this.modal.open(this.modalContent, { size: 'lg' });
-    console.log(event)
+    this.matDialod.open(CalenderEventComponent,{
+      data:event,
+      width:'70%',
+      position:{
+        top:'2%'
+      }
+    })
   }
 
   deleteEvent(eventToDelete: CalendarEvent) {

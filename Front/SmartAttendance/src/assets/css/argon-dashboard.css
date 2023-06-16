@@ -5714,15 +5714,8 @@ fieldset:disabled .btn {
   color: #0e422c;
 }
 
-.alert-info {
-  --bs-alert-color: #075260;
-  --bs-alert-bg: #cff5fc;
-  --bs-alert-border-color: #b8f0fa;
-}
 
-.alert-info .alert-link {
-  color: #06424d;
-}
+
 
 .alert-warning {
   --bs-alert-color: #973b26;
@@ -20109,9 +20102,7 @@ fieldset:disabled .btn {
   background-image: linear-gradient(310deg, #2dce89 0%, #26adab 100%);
 }
 
-.alert-info {
-  background-image: linear-gradient(310deg, #1171ef 0%, #0eadca 100%);
-}
+
 
 .alert-warning {
   background-image: linear-gradient(310deg, #fb6340 0%, #faa118 100%);

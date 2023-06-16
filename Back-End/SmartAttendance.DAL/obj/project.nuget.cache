@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "It6uu92xtgNmomZkXx9dwbbh3HrtKuXs472Rkx3c6Hdt3JUfvoQHIJyEUGOXZB2dMimN15EwcalZhDPd4RYoMA==",
+  "dgSpecHash": "tuL+Gz1Nzrg3Uc6P04lr69WRqbmymq8elZI9O8AU6Rdf3w/d4Rf3xK8WsHm9optbJnKEaQykgTYOQUHNluPEIw==",
   "success": true,
-  "projectFilePath": "D:\\Collage\\Smart-Attendance\\Back-End\\SmartAttendance.DAL\\SmartAttendance.DAL.csproj",
+  "projectFilePath": "D:\\Collage\\Project\\Smart-Attendance\\Back-End\\SmartAttendance.DAL\\SmartAttendance.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kareman\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Kareman\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

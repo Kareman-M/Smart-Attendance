@@ -22,9 +22,17 @@ import { AddDepartmentComponent } from './SmartAttendance/Component/Dashboard/De
 import { CourseListComponent } from './SmartAttendance/Component/Dashboard/Course/course-list/course-list.component';
 import { AddCourseComponent } from './SmartAttendance/Component/Dashboard/Course/add-course/add-course.component';
 import { CourseDialogComponent } from './SmartAttendance/Component/Dashboard/Course/course-dialog/course-dialog.component';
-import { CalenderComponent } from './SmartAttendance/Component/InstructorCourses/calender/calender.component';
+import { CalenderComponent } from './SmartAttendance/Component/InstructorCourses/Calender_/calender/calender.component';
 import { AddNewCourseComponent } from './SmartAttendance/Component/InstructorCourses/add-new-course/add-new-course.component';
 import { LecturesDialogComponent } from './SmartAttendance/Component/Lectures/lectures-dialog/lectures-dialog.component';
+import { DisplayLectureBarCodeComponent } from './SmartAttendance/Component/InstructorCourses/display-lecture-bar-code/display-lecture-bar-code.component';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
+import { DeleteCoursDialogComponent } from './SmartAttendance/Component/InstructorCourses/delete-cours-dialog/delete-cours-dialog.component';
+import { AttendanceDialogComponent } from './SmartAttendance/Component/InstructorCourses/attendance-dialog/attendance-dialog.component';
+import { CalenderEventComponent } from './SmartAttendance/Component/InstructorCourses/Calender_/calender-event/calender-event.component';
+import { AddUserComponent } from './SmartAttendance/Component/Dashboard/User/add-user/add-user.component';
+import { UserDialogComponent } from './SmartAttendance/Component/Dashboard/User/user-dialog/user-dialog.component';
+import { UserListComponent } from './SmartAttendance/Component/Dashboard/User/user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +50,14 @@ import { LecturesDialogComponent } from './SmartAttendance/Component/Lectures/le
     CourseDialogComponent,
     CalenderComponent,
     AddNewCourseComponent,
-    LecturesDialogComponent
+    LecturesDialogComponent,
+    DisplayLectureBarCodeComponent,
+    DeleteCoursDialogComponent,
+    AttendanceDialogComponent,
+    CalenderEventComponent,
+    AddUserComponent,
+    UserDialogComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +68,7 @@ import { LecturesDialogComponent } from './SmartAttendance/Component/Lectures/le
     FormsModule,
     ReactiveFormsModule,
     NgbModalModule,
+    NgxQRCodeModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
       provide: DateAdapter,

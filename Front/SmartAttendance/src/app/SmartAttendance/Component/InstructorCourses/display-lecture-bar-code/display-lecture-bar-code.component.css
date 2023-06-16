@@ -1,0 +1,72 @@
+.custom-container {
+    width: 95%;
+    margin: auto;
+    /* border: 1px solid #ddd; */
+    /* box-shadow: 0px 0px 5px #ddd; */
+    padding: 25px;
+    border-radius: 15px;
+
+}
+
+.lectures-container {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #ddd;
+}
+
+.lecture {
+    display: flex;
+    border: 1px solid #ddd;
+    justify-content: space-between;
+    padding: 5px;
+    cursor: pointer;
+    height: 80px !important;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.barcode-container {
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 5px #ddd;
+    margin-top: 15px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.barcode {
+    width: 30%;
+    margin: auto;
+}
+.barcode span{
+    background-color: #fff;
+    padding: 0px 52px 5px 52px; 
+    font-size: 22px;
+    position: relative;
+    top: 14px;
+    padding: 0px 25px;
+    border: 1px solid;
+    border-radius: 15px;
+}
+.icon{
+    width: 100%;
+    text-align: end;
+}
+.icon mat-icon{
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.icon:fullscreen{
+    background-color: red;
+}
+.barcode-container:fullscreen{
+    background-color: #fff;
+}
+.selected{
+    background-color: #505050;
+}
+.selected *{
+    color: #fff !important;
+}

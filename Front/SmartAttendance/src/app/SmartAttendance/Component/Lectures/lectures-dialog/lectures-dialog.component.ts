@@ -4,6 +4,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AddLucture } from 'src/app/SmartAttendance/Model/add-lucture';
 import { InstructorCourse } from 'src/app/SmartAttendance/Model/instructor-course';
+import { Lucture } from 'src/app/SmartAttendance/Model/lecture';
 import { LectureService } from 'src/app/SmartAttendance/Service/lecture.service';
 
 @Component({
@@ -13,7 +14,7 @@ import { LectureService } from 'src/app/SmartAttendance/Service/lecture.service'
 })
 export class LecturesDialogComponent {
 
-  allLectures: AddLucture[] = [];
+  allLectures: Lucture[] = [];
   formGroup!:FormGroup;
 
   constructor(
@@ -55,7 +56,7 @@ export class LecturesDialogComponent {
   }
 
 
-  deleteLecture(item: AddLucture) {
+  deleteLecture(item: Lucture) {
 
     var index = this.allLectures.indexOf(item);
     if (index > -1) {

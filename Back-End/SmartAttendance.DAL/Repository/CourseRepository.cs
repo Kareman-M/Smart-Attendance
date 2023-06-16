@@ -14,7 +14,7 @@ namespace SmartAttendance.DAL.Repository
         public Result Add(Course course)
         {
             if (course == null) return new Result(Result.NullValues);
-            var crs = _context.Course.FirstOrDefault(x => x.Name == course.Name && x.DepartmentId == course.DepartmentId);
+            var crs = _context.Course.FirstOrDefault(x => x.Name == course.Name && x.DepartmentId == course.DepartmentId && course.CreatedAt.Date.Year == DateTime.Now.Year );
             if (crs != null) return new Result("This Course Is Already Exist");
             var entity = _context.Course.Add(course);
 

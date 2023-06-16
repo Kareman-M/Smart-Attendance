@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+
 namespace SmartAttendance.DAL.Repository.IRepository
 {
     public interface IInstructorRepository
@@ -8,3 +10,5 @@ namespace SmartAttendance.DAL.Repository.IRepository
 
     }
 }
+
+

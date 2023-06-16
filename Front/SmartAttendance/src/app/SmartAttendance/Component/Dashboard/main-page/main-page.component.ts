@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DepartmentDialogComponent } from '../Department/department-dialog/department-dialog.component';
 import { CourseDialogComponent } from '../Course/course-dialog/course-dialog.component';
+import { UserDialogComponent } from '../User/user-dialog/user-dialog.component';
 
 @Component({
   selector: 'app-main-page',
@@ -23,6 +24,15 @@ export class MainPageComponent {
 
   openCourseDialog() {
     this.matDialog.open(CourseDialogComponent, {
+      width: '70%',
+      position: {
+        top: '2%'
+      }
+    })
+  }
+
+  openUserDialog() {
+    this.matDialog.open(UserDialogComponent, {
       width: '70%',
       position: {
         top: '2%'

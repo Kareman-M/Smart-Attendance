@@ -1,4 +1,5 @@
-﻿using SmartAttendance.DAL.IRepository;
+﻿using SmartAttendance.DAL.DBModels;
+using SmartAttendance.DAL.IRepository;
 using SmartAttendance.DAL.Repository;
 using SmartAttendance.DAL.Repository.IRepository;
 using SmartAttendance.DAL.Repository.Repository;
@@ -19,6 +20,7 @@ namespace SmartAttendance.API
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IInstructorRepository, InstructorRepository>();
             services.AddScoped<IInstructorCourseRepository, InstructorCourseRepository>();
+            services.AddScoped<IStudentCourseAttendanceRepository, StudentCourseAttendanceRepository>();
             return services;
         }
     }

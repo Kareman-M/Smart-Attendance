@@ -3470,11 +3470,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Collage\\Smart-Attendance\\Back-End\\SmartAttendance.DAL\\SmartAttendance.DAL.csproj",
+      "projectUniqueName": "D:\\Collage\\Project\\Smart-Attendance\\Back-End\\SmartAttendance.DAL\\SmartAttendance.DAL.csproj",
       "projectName": "SmartAttendance.DAL",
-      "projectPath": "D:\\Collage\\Smart-Attendance\\Back-End\\SmartAttendance.DAL\\SmartAttendance.DAL.csproj",
+      "projectPath": "D:\\Collage\\Project\\Smart-Attendance\\Back-End\\SmartAttendance.DAL\\SmartAttendance.DAL.csproj",
       "packagesPath": "C:\\Users\\Kareman\\.nuget\\packages\\",
-      "outputPath": "D:\\Collage\\Smart-Attendance\\Back-End\\SmartAttendance.DAL\\obj\\",
+      "outputPath": "D:\\Collage\\Project\\Smart-Attendance\\Back-End\\SmartAttendance.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

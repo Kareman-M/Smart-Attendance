@@ -14,5 +14,6 @@ namespace SmartAttendance.DAL.DBModels
         public int InstructorCourseId { get; set; }
         [ForeignKey("InstructorCourseId")]
         public InstructorCourse InstructorCourse { get; set; }
+        ICollection<StudentCourseAttendance> StudentCourseAttendances { get; set; }
     }
 }

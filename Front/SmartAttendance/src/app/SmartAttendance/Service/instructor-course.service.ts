@@ -20,7 +20,7 @@ export class InstructorCourseService {
     return this.baseService.get(`${environment.BASE_URL}/api/InstructorCourse/GetAll/${instructorId}`)
   }
 
-  delete(instructorId:number):Observable<Result>{
-    return this.baseService.delete(`${environment.BASE_URL}/api/InstructorCourse/Delete/${instructorId}`)
+  delete(instructorcourseId:number):Observable<Result>{
+    return this.baseService.delete(`${environment.BASE_URL}/api/InstructorCourse/Delete/${instructorcourseId}`)
   }
 }

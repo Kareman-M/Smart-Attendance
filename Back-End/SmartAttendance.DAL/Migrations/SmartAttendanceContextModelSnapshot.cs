@@ -33,6 +33,9 @@ namespace SmartAttendance.DAL.Migrations
                     b.Property<bool>("Avilable")
                         .HasColumnType("bit");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<int?>("DepartmentId")
                         .IsRequired()
                         .HasColumnType("int");
@@ -172,6 +175,34 @@ namespace SmartAttendance.DAL.Migrations
                     b.ToTable("Student");
                 });
 
+            modelBuilder.Entity("SmartAttendance.DAL.DBModels.StudentCourseAttendance", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("AttendAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("LectureId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudenId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("StudentName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LectureId");
+
+                    b.ToTable("StudentCourseAttendance");
+                });
+
             modelBuilder.Entity("SmartAttendance.DAL.DBModels.Course", b =>
                 {
                     b.HasOne("SmartAttendance.DAL.DBModels.Department", "Department")
@@ -222,6 +253,17 @@ namespace SmartAttendance.DAL.Migrations
                         .IsRequired();
 
                     b.Navigation("InstructorCourse");
+                });
+
+            modelBuilder.Entity("SmartAttendance.DAL.DBModels.StudentCourseAttendance", b =>
+                {
+                    b.HasOne("SmartAttendance.DAL.DBModels.Lucture", "Lucture")
+                        .WithMany()
+                        .HasForeignKey("LectureId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Lucture");
                 });
 
             modelBuilder.Entity("SmartAttendance.DAL.DBModels.Course", b =>

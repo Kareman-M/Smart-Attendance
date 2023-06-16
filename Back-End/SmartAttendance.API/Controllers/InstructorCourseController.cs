@@ -53,5 +53,7 @@ namespace SmartAttendance.API.Controllers
             var res = _instructorCourseRepository.Remove(id);
             return Ok(res);
         }
+
+      
     }
 }

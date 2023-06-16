@@ -27,4 +27,8 @@ export class LectureService {
   getAllInstructorLectures(instructorId:number){
     return this.baseService.get(`${environment.BASE_URL}/api/Lecture/GetAllInstructorLectures/${instructorId}`)
   }
+
+  getAllTodayInstructorLectures(instructorId:number){
+    return this.baseService.get(`${environment.BASE_URL}/api/Lecture/GetAllTodayInstructorLectures/${instructorId}`)
+  }
 }

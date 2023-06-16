@@ -1,0 +1,17 @@
+<span class="new-dept">Add New User</span>
+<div class="custom-container">
+
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Computer Science" required #dept>
+    </mat-form-field>
+
+    <button mat-mini-fab color="primary" (click)="addUser()" matTooltip="Submit"
+        [disabled]="dept.value == '' || dept.value == undefined">
+        <span style="font-size: 30px;line-height: 2;">+</span>
+    </button>
+
+    <div class="img">
+        <img src="../../../../../assets/img/user.png">
+    </div>
+</div>

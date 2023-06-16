@@ -7,6 +7,7 @@ namespace SmartAttendance.DAL.Repository.IRepository
     {
         IEnumerable<Lucture> GetByInstructorCourseId(int insCrsId);
         IEnumerable<Lucture> GetByInstructorId(int insstructorId);
+        IEnumerable<Lucture> GetAllInstructorTodayLectures(int insstructorId);
         Result Add(Lucture lecture);
         Result Delete(int id);
     }
