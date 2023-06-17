@@ -39,7 +39,8 @@ export class DisplayLectureBarCodeComponent implements OnInit {
 
   fullscreen() {
 
-    var element = this.element.children[1].children[0].children[1].children[1].children[0].children[0].children[1].children[1].children[0].children[1];
+    console.log(this.element.children[1].children[0].children[1].children[0].children[1].children[1].children[0].children[1].children[1].children[0].children[1])
+    var element = this.element.children[1].children[0].children[1].children[0].children[1].children[1].children[0].children[1].children[1].children[0].children[1];
     if (element.requestFullscreen) {
       element.requestFullscreen();
     }

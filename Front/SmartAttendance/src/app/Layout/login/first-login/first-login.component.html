@@ -1,0 +1,29 @@
+<div class="header">
+    <span>SMART ATTENDANCE</span>
+    <!-- <div class="image">
+        <img src="../../../../assets/img/qr-code8.png">
+    </div> -->
+</div>
+<div class="custom-container">
+    <div class="login">
+        <form >
+            
+            <h2 class="mb-2">Add Your New Passowrd</h2>
+            
+            <span class="mb-2" *ngIf="pass.value != confirmPass.value && confirmPass.value.length >=5 && pass.value.length >=5" style="color: red;display: block;">Passowrd Not matched</span>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input type="password" matInput #pass>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label> Confirm Password</mat-label>
+                <input type="password" matInput #confirmPass>
+            </mat-form-field>
+
+
+            <div class="text-center">
+                <button class="w-25" mat-raised-button [disabled]="pass.value != confirmPass.value ||confirmPass.value.length <=5 ||pass.value.length <=5" (click)="changePassowrdForFirstLogin(pass.value)">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

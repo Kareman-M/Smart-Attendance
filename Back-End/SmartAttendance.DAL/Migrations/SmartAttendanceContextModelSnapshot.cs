@@ -203,6 +203,47 @@ namespace SmartAttendance.DAL.Migrations
                     b.ToTable("StudentCourseAttendance");
                 });
 
+            modelBuilder.Entity("SmartAttendance.DAL.DBModels.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("CurrentlyLogin")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("FirstLogin")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Removed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("User");
+                });
+
             modelBuilder.Entity("SmartAttendance.DAL.DBModels.Course", b =>
                 {
                     b.HasOne("SmartAttendance.DAL.DBModels.Department", "Department")

@@ -16,8 +16,7 @@ namespace SmartAttendance.API.Controllers
         {
             try
             {
-
-                return Ok();
+                return Ok(_userRepository.Login(user.Username, user.Password));
             }
             catch (Exception ex)
             {

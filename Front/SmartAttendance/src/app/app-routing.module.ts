@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InstructorCoursesComponent } from './SmartAttendance/Component/InstructorCourses/instructor-courses/instructor-courses.component';
-import { CalenderComponent } from './SmartAttendance/Component/InstructorCourses/calender/calender.component';
 import { LoginComponent } from './Layout/login/login/login.component';
-import { CalenderComponent } from './SmartAttendance/Component/InstructorCourses/Calender_/calender/calender.component';
-import { DisplayLectureBarCodeComponent } from './SmartAttendance/Component/InstructorCourses/display-lecture-bar-code/display-lecture-bar-code.component';
+import { AuthGuardService } from './SmartAttendance/Service/auth-guard.service';
+import { FirstLoginComponent } from './Layout/login/first-login/first-login.component';
+import { MainComponent } from './Layout/main/main.component';
 
 const routes: Routes = [
-  // { path: '', component: MainPageComponent },
-  { path: '', component: LoginComponent },
-  { path: 'ins', component: InstructorCoursesComponent },
-  { path: 'calender', component: CalenderComponent },
-  {path:'lecture', component: DisplayLectureBarCodeComponent}
+  { path: '', component: MainComponent, loadChildren: () => import('./SmartAttendance/smart-attendance/smart-attendance.module').then(m => m.SmartAttendanceModule), canActivate: [AuthGuardService] },
+  { path: 'firstlogin', component: FirstLoginComponent },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({

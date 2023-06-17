@@ -1,4 +1,5 @@
-﻿using SmartAttendance.DAL.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using SmartAttendance.DAL.Context;
 using SmartAttendance.DAL.DBModels;
 using SmartAttendance.DAL.Models;
 using SmartAttendance.DAL.Repository.IRepository;
@@ -9,12 +10,12 @@ namespace SmartAttendance.DAL.Repository
     public class UserRepository : IUserRepository
     {
         private readonly SmartAttendanceContext _context;
-        private readonly RSAHealper _rsaHealper;
-        private readonly JWTManager _jwtManager;
-        public UserRepository(SmartAttendanceContext context, RSAHealper rsaHealper, JWTManager jwtManager)
+        private readonly IRSAHealper _rsaHealper;
+        private readonly IJWTManager _jwtManager;
+        public UserRepository(SmartAttendanceContext context, IRSAHealper rsaHealper, IJWTManager jwtManager)
         {
             _context = context;
-            _rsaHealper = rsaHealper;
+           _rsaHealper = rsaHealper;
             _jwtManager = jwtManager;
         }
         public Result Add(User user)
@@ -22,7 +23,7 @@ namespace SmartAttendance.DAL.Repository
             if (user == null) return new Result(Result.NullValues);
             var userAlreadyExist = _context.User.FirstOrDefault(x => x.UserName.ToLower() == user.UserName.ToLower() && !x.Removed);
             if (userAlreadyExist != null) return new Result("User Is Already Exist");
-            user.Password = _rsaHealper.Encrypt(user.Password);
+            //user.Password = _rsaHealper.Encrypt(user.Password);
             var entity = _context.User.Add(user);
             return _context.SaveChanges() > 0 ? new Result("User Created Successfully", entity.Entity, true) : new Result(Result.SaveChangesError);
         }
@@ -31,7 +32,7 @@ namespace SmartAttendance.DAL.Repository
         {
             var user = _context.User.FirstOrDefault(x => x.UserName.ToLower() == username.ToLower() && !x.Removed);
             if (user == null) return new Result("User Not Exist");
-            if (_rsaHealper.Decrypt(oldEncryptedPassowrd) != _rsaHealper.Decrypt(user.Password)) return new Result("Incorrect Password");
+           // if (_rsaHealper.Decrypt(oldEncryptedPassowrd) != _rsaHealper.Decrypt(user.Password)) return new Result("Incorrect Password");
             user.Password = newEncryptedPassowrd;
             return _context.SaveChanges() >= 0 ? new Result("Password Changes Successfully", null, true) : new Result(Result.SaveChangesError);
         }
@@ -71,11 +72,12 @@ namespace SmartAttendance.DAL.Repository
         public Result Login(string username, string encryptedPassowrd)
         {
             var user = _context.User.FirstOrDefault(x => x.UserName.ToLower() == username.ToLower() && !x.Removed);
-            if (user == null) return new Result("User Not Exist");
-            if (_rsaHealper.Decrypt(encryptedPassowrd) != _rsaHealper.Decrypt(user.Password)) return new Result("Incorrect Password");
+            if (user == null) return new Result("No User Exist With this Username");
+            // if (_rsaHealper.Decrypt(encryptedPassowrd) != _rsaHealper.Decrypt(user.Password)) return new Result("Incorrect Password");
+            if (encryptedPassowrd!= user.Password) return new Result("Incorrect Password");
             user.CurrentlyLogin = true;
             _context.SaveChanges();
-            return new Result("Password Reseted Successfully", _jwtManager.GenerateToken(user), true);
+            return new Result("Password Reseted Successfully", user, true);
         }
 
         public Result LogOut(string username)
@@ -85,6 +87,27 @@ namespace SmartAttendance.DAL.Repository
             user.CurrentlyLogin = false;
             _context.SaveChanges();
             return new Result("Password Logged Out Successfully", null, true);
+        }
+
+        public IEnumerable<User> GetAll()
+        {
+            return _context.User.Where(x=> !x.Removed);
+        }
+
+        public Result LogOut(string username, string encryptedPassowrd)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Result ChangePassowrdForFirstLogin(string username, string newPassowrd)
+        {
+            var user = _context.User.FirstOrDefault(x => x.UserName.ToLower() == username.ToLower() && !x.Removed);
+            if (user == null) return new Result("No User Exist With this Username");
+            user.CurrentlyLogin = true;
+            user.FirstLogin = false;
+            user.Password = newPassowrd;
+            _context.SaveChanges();
+            return new Result("Password Changed Successfully", user, true);
         }
     }
 }

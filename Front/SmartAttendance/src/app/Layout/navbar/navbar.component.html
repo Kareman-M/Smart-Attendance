@@ -2,23 +2,32 @@
     data-scroll="false">
     <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
-            <h3 class="title">Smart Attendance</h3>
+            <h3 class="title">Welcome back, {{name}}</h3>
         </nav>
 
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
 
             <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                 <div class="input-group">
-                    <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="Type here...">
+
                 </div>
             </div>
 
-            <ul class="navbar-nav  justify-content-end">
+            <ul class="navbar-nav  justify-content-between  align-items-baseline">
+                <li class="nav-item d-flex align-items-center px-4">
+                    <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
+                        <mat-icon style="height: 14px; width: 18px; font-size: 16px;">lock</mat-icon>
+                        <span class="d-sm-inline d-none">Change Password</span>
+                    </a>
+                </li>
+
                 <li class="nav-item d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
-                        <i class="fa fa-user me-sm-1"></i>
-                        <span class="d-sm-inline d-none">Sign In</span>
+                        <span class="d-sm-inline d-none">Sign Out</span>
+                        <span class="material-icons" style="
+                        vertical-align: top;
+                        padding-left: 4px;
+                        font-size: 18px;">logout</span>
                     </a>
                 </li>
 

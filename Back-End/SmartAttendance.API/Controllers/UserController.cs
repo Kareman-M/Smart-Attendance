@@ -11,6 +11,12 @@ namespace SmartAttendance.API.Controllers
         private readonly IUserRepository _userRepository;
         public UserController(IUserRepository userRepository) => _userRepository = userRepository;
 
+        [HttpGet, Route("GetAll")]
+        public IActionResult Get()
+        {
+            return Ok(_userRepository.GetAll());
+        }
+
         [HttpPost, Route("Add")]
         public IActionResult Add(AddUser user)
         {
@@ -83,6 +89,20 @@ namespace SmartAttendance.API.Controllers
             try
             {
                 var result = _userRepository.ResetPassowrd(username, newPassowrd);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPut, Route("ChangePassowrdForFirstLogin/{username}/{newPassowrd}")]
+        public IActionResult ChangePassowrdForFirstLogin(string username, string newPassowrd)
+        {
+            try
+            {
+                var result = _userRepository.ChangePassowrdForFirstLogin(username, newPassowrd);
                 return Ok(result);
             }
             catch (Exception ex)

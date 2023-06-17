@@ -2,22 +2,23 @@
 using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.OpenSsl;
 using Org.BouncyCastle.Security;
+using System.Reflection.PortableExecutable;
 using System.Security.Cryptography;
 using System.Text;
 
 namespace SmartAttendance.DAL.Security
 {
-    public class RSAHealper
+    public class RSAHealper : IRSAHealper
     {
         private readonly RSACryptoServiceProvider _privateKey;
         private readonly RSACryptoServiceProvider _publicKey;
         public RSAHealper()
         {
-            string public_pem = "./posvendor.pub.pem";
+            string public_pem = "./posvendor.key.pem";
             string private_pem = "./posvendor.key.pem";
 
-            _privateKey = GetPrivateKeyFromPemFile(private_pem);
-            _publicKey = GetPublicKeyFromPemFile(public_pem);
+            //_privateKey = GetPrivateKeyFromPemFile(private_pem);
+            //_publicKey = GetPublicKeyFromPemFile(public_pem);
 
         }
         public string Decrypt(string encrypted)
@@ -40,15 +41,18 @@ namespace SmartAttendance.DAL.Security
                 RSACryptoServiceProvider csp = new RSACryptoServiceProvider();
                 csp.ImportParameters(rsaParams);
                 return csp;
+
+
+
             }
         }
         private RSACryptoServiceProvider GetPublicKeyFromPemFile(string filePath)
         {
             using (TextReader publicKeyTextReader = new StringReader(File.ReadAllText(filePath)))
             {
-                RsaKeyParameters publicKeyParam = (RsaKeyParameters)new PemReader(publicKeyTextReader).ReadObject();
+                var publicKeyParam = new PemReader(publicKeyTextReader).ReadObject();
 
-                RSAParameters rsaParams = DotNetUtilities.ToRSAParameters(publicKeyParam);
+                RSAParameters rsaParams = DotNetUtilities.ToRSAParameters((RsaKeyParameters)publicKeyParam);
 
                 RSACryptoServiceProvider csp = new RSACryptoServiceProvider();
                 csp.ImportParameters(rsaParams);

@@ -3,6 +3,7 @@ using SmartAttendance.DAL.IRepository;
 using SmartAttendance.DAL.Repository;
 using SmartAttendance.DAL.Repository.IRepository;
 using SmartAttendance.DAL.Repository.Repository;
+using SmartAttendance.DAL.Security;
 
 namespace SmartAttendance.API
 {
@@ -13,6 +14,9 @@ namespace SmartAttendance.API
         {
 
 
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IJWTManager, JWTManager>();
+            services.AddScoped<IRSAHealper, RSAHealper>();
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();
             services.AddScoped<IInstructorRepository, InstructorRepository>();
@@ -20,6 +24,7 @@ namespace SmartAttendance.API
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IInstructorRepository, InstructorRepository>();
             services.AddScoped<IInstructorCourseRepository, InstructorCourseRepository>();
+            services.AddScoped<IStudentCourseAttendanceRepository, StudentCourseAttendanceRepository>();
             services.AddScoped<IStudentCourseAttendanceRepository, StudentCourseAttendanceRepository>();
             return services;
         }

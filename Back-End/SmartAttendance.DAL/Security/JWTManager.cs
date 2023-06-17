@@ -5,7 +5,7 @@ using System.Security.Claims;
 
 namespace SmartAttendance.DAL.Security
 {
-    public class JWTManager
+    public class JWTManager : IJWTManager
     {
         private const string Secret = "db3OIsj+BXE9NZDy0t8W3TcNekrF+2d/1sFnWG4HnV8TZY30iTOdtVWJG8abWvB1GlOgJuQZdcF2Luqm/hccMw==";
         public string GenerateToken(User user)

@@ -7,10 +7,9 @@ import { User } from 'src/app/SmartAttendance/Model/user';
   styleUrls: ['./user-dialog.component.css']
 })
 export class UserDialogComponent {
-  @Output() updateDataSources: EventEmitter<string> = new EventEmitter();
-  newUser!: User;
+  newUser!: boolean;
 
-  updateUsersList(event: User) {
+  updateUsersList(event: boolean) {
     this.newUser = event;
   }
 }

@@ -1,17 +1,50 @@
 <span class="new-dept">Add New User</span>
 <div class="custom-container">
 
-    <mat-form-field appearance="fill">
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Computer Science" required #dept>
-    </mat-form-field>
+    <form [formGroup]="logForm">
 
-    <button mat-mini-fab color="primary" (click)="addUser()" matTooltip="Submit"
-        [disabled]="dept.value == '' || dept.value == undefined">
-        <span style="font-size: 30px;line-height: 2;">+</span>
-    </button>
+        <div class="row">
 
-    <div class="img">
-        <img src="../../../../../assets/img/user.png">
-    </div>
+            <div class="col-sm-4">
+                <mat-form-field appearance="fill">
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="Name">
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm-4">
+                <mat-form-field appearance="fill">
+                    <mat-label>User Name</mat-label>
+                    <input matInput formControlName="UserName">
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm-4">
+                <mat-form-field appearance="fill">
+                    <mat-label>Passowrd</mat-label>
+                    <input matInput type='password' formControlName="Password">
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm-4">
+                <mat-form-field appearance="fill">
+                    <mat-label>Role</mat-label>
+                    <mat-select  formControlName="Role">
+                        <mat-option value="admin">Admin</mat-option>
+                        <mat-option value="instructor">Instructor</mat-option>
+                        <mat-option value="student">Student</mat-option>
+                      </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm-4">
+                <button mat-mini-fab color="primary" (click)="addUser()" matTooltip="Submit"
+                    [disabled]="logForm.invalid">
+                    <span style="font-size: 30px;line-height: 2;">+</span>
+                </button>
+            </div>
+
+        </div>
+
+    </form>
 </div>
