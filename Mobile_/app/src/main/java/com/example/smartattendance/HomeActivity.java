@@ -55,6 +55,8 @@ private Button LoginBtn;
                     @Override
                     public void onResponse(Call<Result> call, Response<Result> response) {
                         //if(call.)
+                        Result result = response.body();
+                        Log.d("TAG", "onResponse: " + result.getMessage());
                         openNextActivity();
                     }
 
