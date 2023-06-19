@@ -7,36 +7,36 @@
     android:background="@color/black_shade_1"
     tools:context=".HomeActivity">
 
-    <ImageView
-        android:id="@+id/idIVLogo"
-        android:layout_width="288dp"
-        android:layout_height="288dp"
-        android:src="@drawable/qr_code"
+
+    <EditText
+        android:id="@+id/idUsername"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:background="@color/white"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="58dp"
+        android:layout_marginTop="220dp"
+        android:inputType="text"
+        />
+    <EditText
+        android:id="@+id/idPassword"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/idUsername"
+        android:inputType="textVisiblePassword"
         />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/idIVLogo"
-        android:id="@+id/idTVHeading"
-        android:layout_marginTop="28dp"
-        android:text="Click On Scan QR Code For Attend"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="28sp"
-        android:textStyle="bold"/>
-
     <Button
-        android:id="@+id/idBtnScanQRCode"
+        android:id="@+id/idBtnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVHeading"
+        android:layout_below="@id/idPassword"
         android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="28dp"
         android:background="@drawable/button_back"
-        android:text="Scan QR Code"
+        android:text="Login"
         android:textAllCaps="false" />
 </RelativeLayout>

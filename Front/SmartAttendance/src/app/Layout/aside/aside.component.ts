@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AsideComponent {
 
+  role = localStorage.getItem('role')
 }

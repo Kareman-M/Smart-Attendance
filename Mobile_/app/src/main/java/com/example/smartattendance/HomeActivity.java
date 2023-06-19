@@ -4,52 +4,73 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import  android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import okhttp3.OkHttpClient;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class HomeActivity extends AppCompatActivity {
-private Button ScanRQCodeBtn;
+private Button LoginBtn;
+    private EditText UserNameText;
+    private EditText Password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        ScanRQCodeBtn = findViewById(R.id.idBtnScanQRCode);
-        ScanRQCodeBtn.setBackgroundColor(Color.YELLOW);
+        LoginBtn = findViewById(R.id.idBtnLogin);
+        UserNameText = findViewById(R.id.idUsername);
+        Password = findViewById(R.id.idPassword);
 
-        ScanRQCodeBtn.setOnClickListener(new View.OnClickListener() {
+        LoginBtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
-//                Intent i = new Intent(HomeActivity.this,ScanQRCode.class);
-//                startActivity(i);
+                OkHttpClient okHttpClient = UnsafeOkHttpClient.getUnsafeOkHttpClient();
 
-                IntentIntegrator intentIntegrator = new IntentIntegrator(HomeActivity.this);
-                intentIntegrator.setOrientationLocked(true);
-                intentIntegrator.setPrompt("Scan QR Code");
-                intentIntegrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE);
-                intentIntegrator.initiateScan();
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl("https://106.139.71.19:7226/")
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .client(okHttpClient)
+                        .build();
+
+                LoginModel model = new LoginModel();
+                model.username = UserNameText.getText().toString();
+                model.password = Password.getText().toString();
+
+                ApiInterface apiInterface = retrofit.create(ApiInterface.class);
+                Call<Result> call = apiInterface.loginUser(model);
+                call.enqueue(new Callback<Result>() {
+                    @Override
+                    public void onResponse(Call<Result> call, Response<Result> response) {
+                        //if(call.)
+                        openNextActivity();
+                    }
+
+                    @Override
+                    public void onFailure(Call<Result> call, Throwable t) {
+                        Log.d("TAG", "onFailure: "+ t.getMessage());
+                    }
+                });
             }
         });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-
-        IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
-        if(intentResult != null){
-            String content = intentResult.getContents();
-            if(content != null){
-                Intent i = new Intent(HomeActivity.this,ScanQRCode.class);
-                startActivity(i);
-            }
-        }
-        else {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
-
+    private void openNextActivity() {
+        Intent i = new Intent(HomeActivity.this,ScanQRCode.class);
+        startActivity(i);
     }
+
+
 }

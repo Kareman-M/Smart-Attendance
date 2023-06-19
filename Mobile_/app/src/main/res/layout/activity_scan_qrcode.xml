@@ -8,14 +8,37 @@
     tools:ignore="MissingClass">
 
 
+    <ImageView
+        android:id="@+id/idIVLogo"
+        android:layout_width="288dp"
+        android:layout_height="288dp"
+        android:src="@drawable/qr_code"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp"
+        />
 
     <TextView
-        android:id="@+id/idTVscanned"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="@color/white"
-        android:padding="5dp"
-        android:text="@string/scanned_data"
-        android:textColor="@color/black" />
+        android:layout_below="@id/idIVLogo"
+        android:id="@+id/idTVHeading"
+        android:layout_marginTop="28dp"
+        android:text="Click On Scan QR Code For Attend"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/idBtnScanQRCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTVHeading"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/button_back"
+        android:text="Scan QR Code"
+        android:textAllCaps="false" />
+
 </RelativeLayout>

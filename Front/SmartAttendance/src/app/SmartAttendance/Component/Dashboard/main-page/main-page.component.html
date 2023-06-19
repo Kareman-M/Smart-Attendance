@@ -1,7 +1,14 @@
-<div style="text-align:center">
-    <button type="button" class="btn btn-outline-primary" (click)="openDepartmentsDialog()">Department</button>
-    <button type="button" class="btn btn-outline-secondary" (click)=" openCourseDialog()">Course</button>
-    <button type="button" class="btn btn-outline-danger" (click)=" openUserDialog()">Userss</button>
+<div class="row">
+    <div class="col-sm-9">
+        <div style="text-align:start">
+            <button type="button" class="btn btn-outline-primary" (click)="openDepartmentsDialog()">Department</button>
+            <button type="button" class="btn btn-outline-secondary" (click)=" openCourseDialog()">Course</button>
+            <button type="button" class="btn btn-outline-danger" (click)=" openUserDialog()">Userss</button>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="clock">
+            <h1> {{ rxTime | date: 'hh:mm:ss a' }} </h1>
+        </div>
+    </div>
 </div>
-
-

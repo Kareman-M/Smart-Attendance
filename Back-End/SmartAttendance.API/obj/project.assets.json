@@ -3961,24 +3961,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kareman\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\kariman.m\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Collage\\Project\\Smart-Attendance\\Back-End\\SmartAttendance.API\\SmartAttendance.API.csproj",
+      "projectUniqueName": "E:\\KM\\RoadMap\\Collage\\SmartAttendance\\Back-End\\SmartAttendance.API\\SmartAttendance.API.csproj",
       "projectName": "SmartAttendance.API",
-      "projectPath": "D:\\Collage\\Project\\Smart-Attendance\\Back-End\\SmartAttendance.API\\SmartAttendance.API.csproj",
-      "packagesPath": "C:\\Users\\Kareman\\.nuget\\packages\\",
-      "outputPath": "D:\\Collage\\Project\\Smart-Attendance\\Back-End\\SmartAttendance.API\\obj\\",
+      "projectPath": "E:\\KM\\RoadMap\\Collage\\SmartAttendance\\Back-End\\SmartAttendance.API\\SmartAttendance.API.csproj",
+      "packagesPath": "C:\\Users\\kariman.m\\.nuget\\packages\\",
+      "outputPath": "E:\\KM\\RoadMap\\Collage\\SmartAttendance\\Back-End\\SmartAttendance.API\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Kareman\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\kariman.m\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3986,15 +3981,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Collage\\Project\\Smart-Attendance\\Back-End\\SmartAttendance.DAL\\SmartAttendance.DAL.csproj": {
-              "projectPath": "D:\\Collage\\Project\\Smart-Attendance\\Back-End\\SmartAttendance.DAL\\SmartAttendance.DAL.csproj"
+            "E:\\KM\\RoadMap\\Collage\\SmartAttendance\\Back-End\\SmartAttendance.DAL\\SmartAttendance.DAL.csproj": {
+              "projectPath": "E:\\KM\\RoadMap\\Collage\\SmartAttendance\\Back-End\\SmartAttendance.DAL\\SmartAttendance.DAL.csproj"
             }
           }
         }
@@ -4053,7 +4047,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

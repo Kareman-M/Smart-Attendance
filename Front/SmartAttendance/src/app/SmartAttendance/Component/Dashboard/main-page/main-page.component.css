@@ -2,3 +2,18 @@
   padding: 25px 60px;
   margin-right: 30px;
 }
+.clock {
+  border: 1px solid #ddd;
+  padding: 35px;
+  width: 100%;
+  box-shadow: 0px 0px 10px #ddd;
+  border-radius: 10px;
+  background-color: #9594a5;
+}
+.clock h1 {
+  color: #fff;
+}
+.row {
+  align-items: self-end;
+  padding: 0px 50px;
+}
