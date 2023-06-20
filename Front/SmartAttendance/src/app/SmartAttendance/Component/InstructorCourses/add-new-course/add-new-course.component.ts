@@ -19,7 +19,7 @@ export class AddNewCourseComponent {
   formGroup!: FormGroup;
   addlecturesOn: boolean = false;
   @Output() public updateData: EventEmitter<boolean> = new EventEmitter();
-  
+
   ngOnInit() {
     this.getDepartments();
     this.declareFormIntites();
@@ -43,7 +43,7 @@ export class AddNewCourseComponent {
 
   submit() {
     var obj: AddInstructorCourse = {
-      instructorId: 1,
+      instructorId: parseInt(localStorage.getItem('userId') ?? "0"),
       totalAttendanceGrade: this.formGroup.get('TotalAttendanceGrade')?.value,
       courseId: this.formGroup.get('CourseId')?.value,
       term: this.formGroup.get('Term')?.value

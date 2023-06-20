@@ -14,7 +14,7 @@ namespace SmartAttendance.DAL.DBModels
         public DateTime CreatedAt { get; set; }
         public int CourseId { get; set; }
         [ForeignKey("InstructorId")]
-        public Instructor Instructor { get; set; }
+        public User Instructor { get; set; }
         [ForeignKey("CourseId")]
         public Course Course { get; set; }
         public ICollection<Lucture>? Lectures { get; set; }

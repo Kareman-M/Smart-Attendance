@@ -1,15 +1,17 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Result } from '../Model/result';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BaseService {
   // token: any = localStorage.getItem("jwt");
-  header: any = null;
+  header: HttpHeaders = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'userId': localStorage.getItem('userId')?.toString() ?? "",
+  });
   // new HttpHeaders({
   //   'Content-Type': 'application/json',
   //   'Authorization': `Bearer ${this.token}`,
@@ -34,6 +36,7 @@ export class BaseService {
   }
 
   delete(url: string): Observable<any> {
+    console.log(this.header)
     return this.httpClient.delete(url, { headers: this.header })
   }
   patch(url: string): Observable<any> {

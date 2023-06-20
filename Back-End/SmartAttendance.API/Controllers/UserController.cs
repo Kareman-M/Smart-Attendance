@@ -6,7 +6,7 @@ namespace SmartAttendance.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class UserController : BaseController
     {
         private readonly IUserRepository _userRepository;
         public UserController(IUserRepository userRepository) => _userRepository = userRepository;
@@ -46,7 +46,7 @@ namespace SmartAttendance.API.Controllers
         {
             try
             {
-                var result = _userRepository.Remove(username);
+                var result = _userRepository.Remove(username, GetUserId());
                 return Ok(result);
             }
             catch (Exception ex)

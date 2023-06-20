@@ -76,16 +76,16 @@ namespace SmartAttendance.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("DepartmentId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("DepartmentId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Instructor");
                 });
@@ -107,6 +107,9 @@ namespace SmartAttendance.DAL.Migrations
                     b.Property<int>("InstructorId")
                         .HasColumnType("int");
 
+                    b.Property<int>("InstructorId1")
+                        .HasColumnType("int");
+
                     b.Property<string>("Term")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -119,6 +122,8 @@ namespace SmartAttendance.DAL.Migrations
                     b.HasIndex("CourseId");
 
                     b.HasIndex("InstructorId");
+
+                    b.HasIndex("InstructorId1");
 
                     b.ToTable("InstructorCourse");
                 });
@@ -257,13 +262,13 @@ namespace SmartAttendance.DAL.Migrations
 
             modelBuilder.Entity("SmartAttendance.DAL.DBModels.Instructor", b =>
                 {
-                    b.HasOne("SmartAttendance.DAL.DBModels.Department", "Department")
+                    b.HasOne("SmartAttendance.DAL.DBModels.User", "User")
                         .WithMany()
-                        .HasForeignKey("DepartmentId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Department");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("SmartAttendance.DAL.DBModels.InstructorCourse", b =>
@@ -274,9 +279,15 @@ namespace SmartAttendance.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SmartAttendance.DAL.DBModels.Instructor", "Instructor")
-                        .WithMany("InstructorCourses")
+                    b.HasOne("SmartAttendance.DAL.DBModels.User", "Instructor")
+                        .WithMany()
                         .HasForeignKey("InstructorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SmartAttendance.DAL.DBModels.Instructor", null)
+                        .WithMany("InstructorCourses")
+                        .HasForeignKey("InstructorId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
