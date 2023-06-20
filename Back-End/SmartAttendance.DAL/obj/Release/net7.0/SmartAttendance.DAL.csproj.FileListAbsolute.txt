@@ -1,0 +1,14 @@
+D:\Collage\Project\Smart-Attendance\Back-End\SmartAttendance.DAL\bin\Release\net7.0\SmartAttendance.DAL.deps.json
+D:\Collage\Project\Smart-Attendance\Back-End\SmartAttendance.DAL\bin\Release\net7.0\SmartAttendance.DAL.runtimeconfig.json
+D:\Collage\Project\Smart-Attendance\Back-End\SmartAttendance.DAL\bin\Release\net7.0\SmartAttendance.DAL.dll
+D:\Collage\Project\Smart-Attendance\Back-End\SmartAttendance.DAL\bin\Release\net7.0\SmartAttendance.DAL.pdb
+D:\Collage\Project\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Release\net7.0\SmartAttendance.DAL.csproj.AssemblyReference.cache
+D:\Collage\Project\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Release\net7.0\SmartAttendance.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Collage\Project\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Release\net7.0\SmartAttendance.DAL.AssemblyInfoInputs.cache
+D:\Collage\Project\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Release\net7.0\SmartAttendance.DAL.AssemblyInfo.cs
+D:\Collage\Project\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Release\net7.0\SmartAttendance.DAL.csproj.CoreCompileInputs.cache
+D:\Collage\Project\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Release\net7.0\SmartAttendance.DAL.dll
+D:\Collage\Project\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Release\net7.0\refint\SmartAttendance.DAL.dll
+D:\Collage\Project\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Release\net7.0\SmartAttendance.DAL.pdb
+D:\Collage\Project\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Release\net7.0\SmartAttendance.DAL.genruntimeconfig.cache
+D:\Collage\Project\Smart-Attendance\Back-End\SmartAttendance.DAL\obj\Release\net7.0\ref\SmartAttendance.DAL.dll

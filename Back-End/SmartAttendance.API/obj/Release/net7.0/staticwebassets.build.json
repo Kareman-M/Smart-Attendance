@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "5agYDt6eiL6IrdMIDBhv+BV5jiyNFU6UcgdLlhxVH2Y=",
+  "Source": "SmartAttendance.API",
+  "BasePath": "_content/SmartAttendance.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

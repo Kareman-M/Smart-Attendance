@@ -17,12 +17,9 @@ namespace SmartAttendance.API.Controllers
         }
 
         [HttpPost, Route("Add")]
-        public IActionResult Add()
+        public IActionResult Add(StudentsCourseAttendanceDTO attendanceDTO)
         {
-            return Ok(_studentCourseAttendanceRepository.Add(new DAL.DBModels.StudentCourseAttendance
-            {
-
-            }));
+            return Ok(_studentCourseAttendanceRepository.Add(attendanceDTO.StudenId, attendanceDTO.Barcode));
         }
 
         [HttpGet, Route("GetLecturesAttendance/{instructorCourseId}")]
