@@ -7,10 +7,10 @@ namespace SmartAttendance.DAL.DBModels
     {
         [Key]
         public int Id { get; set; }
+        public int UserId { get; set; }
         public String Name { get; set; }
-        public int DepartmentId { get; set; }
-        [ForeignKey("DepartmentId")]
-        public Department Department { get; set; }
         public ICollection<InstructorCourse> InstructorCourses { get; set; }
+        [ForeignKey("UserId")]
+        public User User { get; set; }
     }
 }

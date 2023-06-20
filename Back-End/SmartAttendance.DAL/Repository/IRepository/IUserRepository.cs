@@ -7,7 +7,7 @@ namespace SmartAttendance.DAL.Repository.IRepository
     {
         IEnumerable<User> GetAll();
         Result Add(User user);
-        Result Remove(string username);
+        Result Remove(string username, int currentUserId);
         public Result UndoRemoved(string username);
         Result EditName(string username, string newName);
         Result ResetPassowrd(string username, string newPassowrd);

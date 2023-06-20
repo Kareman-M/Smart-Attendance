@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SmartAttendance.DAL.Context;
+﻿using SmartAttendance.DAL.Context;
 using SmartAttendance.DAL.DBModels;
 using SmartAttendance.DAL.Models;
 using SmartAttendance.DAL.Repository.IRepository;
@@ -15,7 +14,7 @@ namespace SmartAttendance.DAL.Repository
         public UserRepository(SmartAttendanceContext context, IRSAHealper rsaHealper, IJWTManager jwtManager)
         {
             _context = context;
-           _rsaHealper = rsaHealper;
+            _rsaHealper = rsaHealper;
             _jwtManager = jwtManager;
         }
         public Result Add(User user)
@@ -25,6 +24,16 @@ namespace SmartAttendance.DAL.Repository
             if (userAlreadyExist != null) return new Result("User Is Already Exist");
             //user.Password = _rsaHealper.Encrypt(user.Password);
             var entity = _context.User.Add(user);
+            _context.SaveChanges();
+            if (user.Role == "instructor")
+            {
+                _context.Instructor.Add(new Instructor
+                {
+                    Id = entity.Entity.Id,
+                    Name = user.UserName,
+                    UserId = entity.Entity.Id,
+                });
+            }
             return _context.SaveChanges() > 0 ? new Result("User Created Successfully", entity.Entity, true) : new Result(Result.SaveChangesError);
         }
 
@@ -32,7 +41,7 @@ namespace SmartAttendance.DAL.Repository
         {
             var user = _context.User.FirstOrDefault(x => x.UserName.ToLower() == username.ToLower() && !x.Removed);
             if (user == null) return new Result("User Not Exist");
-           // if (_rsaHealper.Decrypt(oldEncryptedPassowrd) != _rsaHealper.Decrypt(user.Password)) return new Result("Incorrect Password");
+            // if (_rsaHealper.Decrypt(oldEncryptedPassowrd) != _rsaHealper.Decrypt(user.Password)) return new Result("Incorrect Password");
             user.Password = newEncryptedPassowrd;
             return _context.SaveChanges() >= 0 ? new Result("Password Changes Successfully", null, true) : new Result(Result.SaveChangesError);
         }
@@ -53,10 +62,11 @@ namespace SmartAttendance.DAL.Repository
             return _context.SaveChanges() >= 0 ? new Result("Undo Remove Done Successfully", null, true) : new Result(Result.SaveChangesError);
         }
 
-        public Result Remove(string username)
+        public Result Remove(string username, int currentUserId)
         {
             var user = _context.User.FirstOrDefault(x => x.UserName.ToLower() == username.ToLower() && !x.Removed);
             if (user == null) return new Result("User Not Exist");
+            if (user.Id == currentUserId) return new Result("You Can't delete your self");
             user.Removed = true;
             return _context.SaveChanges() >= 0 ? new Result("User Removed Successfully", null, true) : new Result(Result.SaveChangesError);
         }
@@ -74,7 +84,7 @@ namespace SmartAttendance.DAL.Repository
             var user = _context.User.FirstOrDefault(x => x.UserName.ToLower() == username.ToLower() && !x.Removed);
             if (user == null) return new Result("No User Exist With this Username");
             // if (_rsaHealper.Decrypt(encryptedPassowrd) != _rsaHealper.Decrypt(user.Password)) return new Result("Incorrect Password");
-            if (encryptedPassowrd!= user.Password) return new Result("Incorrect Password");
+            if (encryptedPassowrd != user.Password) return new Result("Incorrect Password");
             user.CurrentlyLogin = true;
             _context.SaveChanges();
             return new Result("Password Reseted Successfully", user, true);
@@ -91,7 +101,7 @@ namespace SmartAttendance.DAL.Repository
 
         public IEnumerable<User> GetAll()
         {
-            return _context.User.Where(x=> !x.Removed);
+            return _context.User.Where(x => !x.Removed);
         }
 
         public Result LogOut(string username, string encryptedPassowrd)

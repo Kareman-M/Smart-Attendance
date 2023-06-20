@@ -6,6 +6,7 @@ import { AddLucture } from 'src/app/SmartAttendance/Model/add-lucture';
 import { InstructorCourse } from 'src/app/SmartAttendance/Model/instructor-course';
 import { Lucture } from 'src/app/SmartAttendance/Model/lecture';
 import { LectureService } from 'src/app/SmartAttendance/Service/lecture.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-lectures-dialog',
@@ -15,7 +16,7 @@ import { LectureService } from 'src/app/SmartAttendance/Service/lecture.service'
 export class LecturesDialogComponent {
 
   allLectures: Lucture[] = [];
-  formGroup!:FormGroup;
+  formGroup!: FormGroup;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public item: InstructorCourse,
@@ -32,17 +33,17 @@ export class LecturesDialogComponent {
   addlecture() {
     var obj: AddLucture = {
       instructorCourseId: this.item.id,
-      date:  new Date(this.formGroup.get('date')?.value).toISOString(),
+      date: environment.addDays(new Date(this.formGroup.get('date')?.value).toISOString(), 1),
       title: this.formGroup.get('title')?.value,
       barCode: '',
       attendanceGrade: this.formGroup.get('grade')?.value,
     }
     this.lectureService.add(obj).subscribe(res => {
-      if(res.isCompleted){
+      if (res.isCompleted) {
         this.getLectures();
         this.formGroup.reset();
       }
-      this.snackBar.open(res.message,"",{duration:2000})
+      this.snackBar.open(res.message, "", { duration: 2000 })
     })
   }
 
@@ -62,24 +63,24 @@ export class LecturesDialogComponent {
     if (index > -1) {
       this.lectureService.delete(item.id ?? 0).subscribe(res => {
         if (res.isCompleted) {
-        console.log(res)
-       this.getLectures();
-       console.log(this.allLectures)
-      }
-      this.snackBar.open(res.message,"",{duration:2000})
-    });
-  }
-  }
-
-  canAddTheGrade(){
-
+          console.log(res)
+          this.getLectures();
+          console.log(this.allLectures)
+        }
+        this.snackBar.open(res.message, "", { duration: 2000 })
+      });
+    }
   }
 
-  declareFormIntites(){
+  canAddTheGrade() {
+
+  }
+
+  declareFormIntites() {
     this.formGroup = this.formBuilder.group({
-      title:new FormControl('',[Validators.required]),
-      grade:new FormControl('',[Validators.required]),
-      date:new FormControl('',[Validators.required]),
+      title: new FormControl('', [Validators.required]),
+      grade: new FormControl('', [Validators.required]),
+      date: new FormControl('', [Validators.required]),
     })
   }
 }

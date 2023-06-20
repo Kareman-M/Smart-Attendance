@@ -11,7 +11,5 @@ public class User {
     public Boolean removed ;
     public Boolean firstLogin ;
     public Boolean currentlyLogin ;
-    public LocalDateTime createdAt ;
-
 
 }

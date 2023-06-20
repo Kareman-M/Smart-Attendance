@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import  android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -25,6 +26,7 @@ public class HomeActivity extends AppCompatActivity {
 private Button LoginBtn;
     private EditText UserNameText;
     private EditText Password;
+    private TextView ErrorText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +34,7 @@ private Button LoginBtn;
         LoginBtn = findViewById(R.id.idBtnLogin);
         UserNameText = findViewById(R.id.idUsername);
         Password = findViewById(R.id.idPassword);
-
+        ErrorText = findViewById(R.id.idTextError);
         LoginBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -56,13 +58,17 @@ private Button LoginBtn;
                     public void onResponse(Call<Result> call, Response<Result> response) {
                         //if(call.)
                         Result result = response.body();
-                        Log.d("TAG", "onResponse: " + result.getMessage());
-                        openNextActivity();
+                        if(result.getIsCompleted()){
+                            openNextActivity();
+                            return;
+                        }
+                        ErrorText.append(result.getMessage());
                     }
 
                     @Override
                     public void onFailure(Call<Result> call, Throwable t) {
                         Log.d("TAG", "onFailure: "+ t.getMessage());
+                        ErrorText.append("Something Went wrong please try again");
                     }
                 });
             }

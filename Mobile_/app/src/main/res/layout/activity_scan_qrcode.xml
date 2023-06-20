@@ -25,7 +25,7 @@
         android:layout_marginTop="28dp"
         android:text="Click On Scan QR Code For Attend"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="28sp"
         android:textStyle="bold"/>
 
@@ -40,5 +40,17 @@
         android:background="@drawable/button_back"
         android:text="Scan QR Code"
         android:textAllCaps="false" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idBtnScanQRCode"
+        android:id="@+id/idTextCode"
+        android:layout_marginTop="28dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        />
 
 </RelativeLayout>

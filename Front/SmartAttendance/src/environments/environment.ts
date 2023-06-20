@@ -5,8 +5,12 @@
 export const environment = {
   production: false,
   // Auth_URL: 'https://106.139.80.40/Credential',
-  BASE_URL: 'https://localhost:44361'
-  // BASE_URL: 'https://106.139.80.40/LogisticsPortal'
+  // BASE_URL: 'https://localhost:44361
+  BASE_URL: 'https://106.139.72.56:7226',
+  addDays(date: string, noOfDays: number) {
+    var _date = new Date(date);
+    return new Date(_date.setDate(_date.getDate() + noOfDays)).toISOString();
+  },
 };
 
 /*
