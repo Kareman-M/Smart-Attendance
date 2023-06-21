@@ -1,4 +1,3 @@
-using Microsoft.EntityFrameworkCore;
 using SmartAttendance.API;
 using SmartAttendance.DAL.Context;
 
@@ -20,7 +19,7 @@ internal class Program
 
         builder.Services.AddCors(option => option.AddPolicy("CorsPolicy", buider =>
         {
-            buider.WithOrigins("http://localhost:4200/")
+            buider.AllowAnyOrigin()
             .AllowAnyMethod()
             .AllowAnyHeader()
             ;
